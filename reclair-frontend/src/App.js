@@ -1,5 +1,6 @@
 
 import './App.css';
+import SignUp from './Pages/SignUp/SignUp';
 
 function App() {
   return (
@@ -7,7 +8,8 @@ function App() {
      
 
   
-      
+    <SignUp></SignUp>
+
     </div>
   );
 }
