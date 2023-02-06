@@ -1,13 +1,40 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { FaGoogle } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { toast } from 'react-hot-toast';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../Context/AuthProvider';
 import login from '../../images/login/signup.jpg'
 const SignUp = () => {
 
-
+const {createUser, updateUser} = useContext(AuthContext)
     const { register,formState: { errors }, handleSubmit } = useForm();
-    const handleSignup = (data) =>{
+    const [signupError,setSignupError] = useState(' ');
+    const location = useLocation()
+    const navigate = useNavigate()
+    const from = location.state?.from?.pathname || '/login'
+    const handleSignUp = (data) =>{
+      setSignupError('')
+      createUser(data.email,data.password)
+      .then(result=> {
+        const user = result.user
+        console.log(user);
+        toast("User created successfully")
+        navigate(from,{replace:true})
+        const userInfo = {
+          displayName:data.name
+        }
+        updateUser(userInfo)
+        .then(()=>{})
+        .catch(err => {
+          
+          console.log(err)
+          
+        })
+      })
+      .catch(error =>{
+        console.log(error);
+        setSignupError(error.message)
+      })
 
     }
 
@@ -44,7 +71,7 @@ const SignUp = () => {
                       <h3 className="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl">
                         Sign up for Our Reclair
                       </h3>
-                      <form onSubmit={handleSubmit(handleSignup)}>
+                      <form onSubmit={handleSubmit(handleSignUp)}>
                         <div className="form-control w-full max-w-xs">
                           <label className="label">
                             <span className="label-text">Enter Your Name</span>
@@ -55,7 +82,8 @@ const SignUp = () => {
                             placeholder="Name here"
                             {...register("name",{required:"Name is required"}) }
                             aria-invalid={errors.mail ? "true" : "false"}
-                          />{/* {errors.name && <p role="alert" className="text-red-600">{errors.name?.message}</p>} */}
+                          />
+                          {errors.name && <p role="alert" className="text-red-600">{errors.name?.message}</p>}
                         </div>
                         <div className="form-control w-full max-w-xs">
                           <label className="label">
@@ -80,24 +108,24 @@ const SignUp = () => {
                             placeholder="Password here"
                             {...register("password",{required:"password is required",minLength:{value:8, message:"Password must be 8 charceter or longer" }})}
                           />
-                          {/* {errors.password && <p role="alert" className="text-red-600">{errors.password?.message}</p>} */}
+                          {errors.password && <p role="alert" className="text-red-600">{errors.password?.message}</p>}
                         </div>
                         <input
                           className="btn btn-success w-full mt-6"
                           value={"signup"}
                           type="submit"
                         />
-                        {/* {signupError && <p className="text-red-600">{signupError}</p>} */}
+                        {signupError && <p className="text-red-600">{signupError}</p>}
                       </form>
                       <p className="mt-2 ml-2">
                         All ready have an account{" "}
-                        {/* <Link className="text-success text-2" to={"/login"}>
+                        <Link className="text-success text-2" to={"/login"}>
                           Login
-                        </Link> */}
+                        </Link>
                       </p>
                       <div className="divider">OR</div>
                       <button className="btn w-full btn-success">
-                        {/* <FaGoogle />  Continue With Google */}
+                        Continue With Google
                       </button>
                     </div>
                   </div>
