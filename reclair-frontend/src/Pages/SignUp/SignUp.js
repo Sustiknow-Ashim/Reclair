@@ -6,7 +6,7 @@ import { AuthContext } from '../../Context/AuthProvider';
 import login from '../../images/login/signup.jpg'
 const SignUp = () => {
 
-const {createUser, updateUser} = useContext(AuthContext)
+const {createUser, updateUser,emailVerify,googleSignIn} = useContext(AuthContext)
     const { register,formState: { errors }, handleSubmit } = useForm();
     const [signupError,setSignupError] = useState(' ');
     const location = useLocation()
@@ -18,7 +18,8 @@ const {createUser, updateUser} = useContext(AuthContext)
       .then(result=> {
         const user = result.user
         console.log(user);
-        toast("User created successfully")
+        handleVerifyEmail()
+        toast.success("User created successfully please verify your email")
         navigate(from,{replace:true})
         const userInfo = {
           displayName:data.name
@@ -36,9 +37,30 @@ const {createUser, updateUser} = useContext(AuthContext)
         setSignupError(error.message)
       })
 
+
     }
 
+    const handleGoogle = () => {
+      googleSignIn()
+          .then(result => {
+              const user = result.user
+              if (user) {
+                  toast.success('Login Successfully')
+                  navigate(from, { replace: true })
 
+              }
+
+          })
+          .catch(error => console.error(error))
+        }
+
+        const handleVerifyEmail = () => {
+          emailVerify()
+            .then(() => {})
+            .catch((error) => {
+              signupError(error.message);
+            });
+        };
 
     return (
 
@@ -124,7 +146,7 @@ const {createUser, updateUser} = useContext(AuthContext)
                         </Link>
                       </p>
                       <div className="divider">OR</div>
-                      <button className="btn w-full btn-success">
+                      <button onClick={handleGoogle} className="btn w-full btn-success">
                         Continue With Google
                       </button>
                     </div>
