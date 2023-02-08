@@ -4,67 +4,52 @@ import { toast } from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
 import login from '../../images/login/signup.jpg'
-const SignUp = () => {
 
-const {createUser, updateUser,emailVerify,googleSignIn} = useContext(AuthContext)
+const Login = () => {
     const { register,formState: { errors }, handleSubmit } = useForm();
-    const [signupError,setSignupError] = useState(' ');
-    const location = useLocation()
+    const [errorLogin,setErrorLogin] = useState('')
+    const {logIn,googleSignIn} = useContext(AuthContext);
+    const location = useLocation();
     const navigate = useNavigate()
-    const from = location.state?.from?.pathname || '/login'
-    const handleSignUp = (data) =>{
-      setSignupError('')
-      createUser(data.email,data.password)
-      .then(result=> {
-        const user = result.user
-        console.log(user);
-        handleVerifyEmail()
-        toast.success("User created successfully please verify your email")
-        navigate(from,{replace:true})
-        const userInfo = {
-          displayName:data.name
-        }
-        updateUser(userInfo)
-        .then(()=>{})
-        .catch(err => {
-          
-          console.log(err)
-          
+    const from = location.state?.from?.pathname || '/'
+
+
+    const handleLogin = (data) => {
+        setErrorLogin('')
+        logIn(data.email,data.password)
+        .then(result =>{
+          const user = result.user
+          console.log(user);
+          if (user.emailVerified === true) {
+            toast.success("Login successfully")
+            navigate(from, { replace: true });
+          } else {
+            toast.error(
+              "Your email is not verified. Please verify your email address."
+            );
+          }
+         
         })
-      })
-      .catch(error =>{
-        console.log(error);
-        setSignupError(error.message)
-      })
+        .catch(error => {
+          console.error(error.message)
+          setErrorLogin(error.message)
+        })
+      };
 
-
-    }
-
-    const handleGoogle = () => {
-      googleSignIn()
-          .then(result => {
-              const user = result.user
-              if (user) {
-                  toast.success('Login Successfully')
-                  navigate(from, { replace: true })
-
-              }
-
-          })
-          .catch(error => console.error(error))
-        }
-
-        const handleVerifyEmail = () => {
-          emailVerify()
-            .then(() => {})
-            .catch((error) => {
-              signupError(error.message);
-            });
-        };
-
+      const handleGoogle = () => {
+        googleSignIn()
+            .then(result => {
+                const user = result.user
+                if (user) {
+                    toast.success('Login Successfully')
+                    navigate(from, { replace: true })
+  
+                }
+  
+            })
+            .catch(error => console.error(error))
+          }
     return (
-
-
         <div className="">
           <div className="relative">
             <img
@@ -76,37 +61,33 @@ const {createUser, updateUser,emailVerify,googleSignIn} = useContext(AuthContext
               <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
                 <div className="flex flex-col items-center justify-between xl:flex-row">
                   <div className="w-full max-w-xl mb-12 xl:mb-0 xl:pr-16 xl:w-7/12">
-                    <h1 className='text-primary text-5xl mb-4'>Client Content Here</h1>
+                    
                     <p className="max-w-xl text-white mb-4 text-base  md:text-lg">
-                    through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" The Extremes of Good and Evil by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular
+                      Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                      accusantium doloremque laudan, totam rem aperiam, eaque ipsa
+                      quae.
                     </p>
                     <a
                       href="/"
                       aria-label=""
                       className="inline-flex items-center font-semibold tracking-wider text-success duration-200 text-teal-accent-400 hover:text-teal-accent-700"
                     >
-                    
+                      Learn more
+                      <svg
+                        className="inline-block w-3 ml-2"
+                        fill="currentColor"
+                        viewBox="0 0 12 12"
+                      >
+                        <path d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z" />
+                      </svg>
                     </a>
                   </div>
                   <div className="w-full max-w-xl xl:px-8 xl:w-5/12">
                     <div className="bg-white rounded shadow-2xl p-7 sm:p-10">
                       <h3 className="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl">
-                        Sign up for Our Reclair
+                        Login Here
                       </h3>
-                      <form onSubmit={handleSubmit(handleSignUp)}>
-                        <div className="form-control w-full max-w-xs">
-                          <label className="label">
-                            <span className="label-text">Enter Your Name</span>
-                          </label>
-                          <input
-                            className="input input-bordered w-full max-w-xs"
-                            type="text"
-                            placeholder="Name here"
-                            {...register("name",{required:"Name is required"}) }
-                            aria-invalid={errors.mail ? "true" : "false"}
-                          />
-                          {errors.name && <p role="alert" className="text-red-600">{errors.name?.message}</p>}
-                        </div>
+                      <form onSubmit={handleSubmit(handleLogin)}>
                         <div className="form-control w-full max-w-xs">
                           <label className="label">
                             <span className="label-text">Enter Your Email</span>
@@ -115,7 +96,7 @@ const {createUser, updateUser,emailVerify,googleSignIn} = useContext(AuthContext
                             className="input input-bordered w-full max-w-xs"
                             type="email"
                             placeholder="Email here"
-                            {...register("email",{required:"Email Address is required"})}
+                            {...register("email",{required:"Please Enter the Valid Email Address"})}
                             aria-invalid={errors.email ? "true" : "false"}
                           />
                           {errors.email && <p role="alert" className="text-red-600">{errors.email?.message}</p>}
@@ -128,7 +109,7 @@ const {createUser, updateUser,emailVerify,googleSignIn} = useContext(AuthContext
                             className="input input-bordered w-full max-w-xs"
                             type="password"
                             placeholder="Password here"
-                            {...register("password",{required:"password is required",minLength:{value:8, message:"Password must be 8 charceter or longer" }})}
+                            {...register("password",{required:"Your Password Wrong Please try again",minLength:{value:8, message:"Your Password Wrong Please try again" }})}
                           />
                           {errors.password && <p role="alert" className="text-red-600">{errors.password?.message}</p>}
                         </div>
@@ -137,16 +118,18 @@ const {createUser, updateUser,emailVerify,googleSignIn} = useContext(AuthContext
                           value={"signup"}
                           type="submit"
                         />
-                        {signupError && <p className="text-red-600">{signupError}</p>}
+                        <div>
+                          {errorLogin && <p className="text-red-600">{errorLogin}</p>}
+                        </div>
                       </form>
                       <p className="mt-2 ml-2">
-                        All ready have an account{" "}
-                        <Link className="text-success text-2" to={"/login"}>
-                          Login
+                        New To Reclair?{" "}
+                        <Link className="text-success text-2" to={"/signup"}>
+                         Please SignUp
                         </Link>
                       </p>
                       <div className="divider">OR</div>
-                      <button onClick={handleGoogle} className="btn w-full btn-success">
+                      <button onClick={handleGoogle} className="btn w-full btn-warning">
                         Continue With Google
                       </button>
                     </div>
@@ -159,4 +142,4 @@ const {createUser, updateUser,emailVerify,googleSignIn} = useContext(AuthContext
       );
 };
 
-export default SignUp;
+export default Login;
