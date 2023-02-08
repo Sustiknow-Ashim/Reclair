@@ -8,7 +8,7 @@ import login from '../../images/login/signup.jpg'
 const Login = () => {
     const { register,formState: { errors }, handleSubmit } = useForm();
     const [errorLogin,setErrorLogin] = useState('')
-    const {logIn} = useContext(AuthContext);
+    const {logIn,googleSignIn} = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate()
     const from = location.state?.from?.pathname || '/'
@@ -20,8 +20,15 @@ const Login = () => {
         .then(result =>{
           const user = result.user
           console.log(user);
-          toast("Login successfully")
-          navigate(from,{replace:true})
+          if (user.emailVerified === true) {
+            toast.success("Login successfully")
+            navigate(from, { replace: true });
+          } else {
+            toast.error(
+              "Your email is not verified. Please verify your email address."
+            );
+          }
+         
         })
         .catch(error => {
           console.error(error.message)
@@ -29,7 +36,19 @@ const Login = () => {
         })
       };
 
-
+      const handleGoogle = () => {
+        googleSignIn()
+            .then(result => {
+                const user = result.user
+                if (user) {
+                    toast.success('Login Successfully')
+                    navigate(from, { replace: true })
+  
+                }
+  
+            })
+            .catch(error => console.error(error))
+          }
     return (
         <div className="">
           <div className="relative">
@@ -110,7 +129,7 @@ const Login = () => {
                         </Link>
                       </p>
                       <div className="divider">OR</div>
-                      <button className="btn w-full btn-warning">
+                      <button onClick={handleGoogle} className="btn w-full btn-warning">
                         Continue With Google
                       </button>
                     </div>
