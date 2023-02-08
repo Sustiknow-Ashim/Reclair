@@ -115,7 +115,7 @@ const Login = () => {
                         </div>
                         <input
                           className="btn btn-success w-full mt-6"
-                          value={"signup"}
+                          value={"Login"}
                           type="submit"
                         />
                         <div>

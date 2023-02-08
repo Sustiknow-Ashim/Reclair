@@ -1,8 +1,19 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../Context/AuthProvider';
 
 
 const Navbar = () => {
+
+    const {user,logOut} = useContext(AuthContext)
+    const navigate = useNavigate()
+    
+    const handleLogout = ()=>{
+        logOut()
+            .then(() => { })
+            .catch(err => console.log(err));
+            navigate('/login')
+    }
 
     return (
         <div className="navbar bg-base-100">
@@ -45,8 +56,12 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link className="btn" to='/signup'>SignUp</Link>
-                {/* <Link className="btn" to='/login'>Logout</Link> */}
+                {
+                    user?.uid ?
+                    <button onClick={handleLogout} className="btn">Logout</button>
+                    :
+                    <Link className="btn" to='/signup'>SignUp</Link>
+                }
             </div>
         </div>
     );
