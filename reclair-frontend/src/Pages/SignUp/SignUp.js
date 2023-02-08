@@ -72,12 +72,12 @@ const SignUp = () => {
                     Sign up for Our Reclair
                   </h3>
                   <form onSubmit={handleSubmit(handleSignUp)}>
-                    <div className="form-control w-full max-w-xs">
+                    <div className="form-control w-full ">
                       <label className="label">
                         <span className="label-text">Enter Your Name</span>
                       </label>
                       <input
-                        className="input input-bordered w-full max-w-xs"
+                        className="input input-bordered w-full "
                         type="text"
                         placeholder="Name here"
                         {...register("name", { required: "Name is required" })}
@@ -85,12 +85,12 @@ const SignUp = () => {
                       />
                       {errors.name && <p role="alert" className="text-red-600">{errors.name?.message}</p>}
                     </div>
-                    <div className="form-control w-full max-w-xs">
+                    <div className="form-control w-full ">
                       <label className="label">
                         <span className="label-text">Enter Your Email</span>
                       </label>
                       <input
-                        className="input input-bordered w-full max-w-xs"
+                        className="input input-bordered w-full "
                         type="email"
                         placeholder="Email here"
                         {...register("email", { required: "Email Address is required" })}
@@ -98,12 +98,12 @@ const SignUp = () => {
                       />
                       {errors.email && <p role="alert" className="text-red-600">{errors.email?.message}</p>}
                     </div>
-                    <div className="form-control w-full max-w-xs">
+                    <div className="form-control w-full ">
                       <label className="label">
                         <span className="label-text">Enter Your Password</span>
                       </label>
                       <input
-                        className="input input-bordered w-full max-w-xs"
+                        className="input input-bordered w-full "
                         type="password"
                         placeholder="Password here"
                         {...register("password", { required: "password is required", minLength: { value: 8, message: "Password must be 8 charceter or longer" } })}
@@ -111,7 +111,7 @@ const SignUp = () => {
                       {errors.password && <p role="alert" className="text-red-600">{errors.password?.message}</p>}
                     </div>
                     <input
-                      className="btn btn-success w-full mt-6"
+                      className="btn btn-success w-full mt-6 "
                       value={"signup"}
                       type="submit"
                     />

@@ -1,6 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 const Navbar = () => {
+
     return (
         <div className="navbar bg-base-100">
             <div className="navbar-start">
@@ -27,7 +30,7 @@ const Navbar = () => {
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
-                    <li><a>Home</a></li>
+                    <li><Link to='/'>Home</Link></li>
                     <li tabIndex={0}>
                         <a>
                             Project
@@ -42,9 +45,8 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">SignUp</a>
-                {/* <button className="btn glass">Glass button</button> */}
-                {/* <button className="btn btn-outline">Sign Up</button> */}
+                <Link className="btn" to='/signup'>SignUp</Link>
+                {/* <Link className="btn" to='/login'>Logout</Link> */}
             </div>
         </div>
     );
