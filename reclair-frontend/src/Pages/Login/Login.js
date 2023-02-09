@@ -64,7 +64,7 @@ const Login = () => {
                     
                     <p className="max-w-xl text-white mb-4 text-base  md:text-lg">
                       Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                      accusantium doloremque laudan, totam rem aperiam, eaque ipsa
+                      accusantium doloremque laucn, totam rem aperiam, eaque ipsa
                       quae.
                     </p>
                     <a
@@ -115,7 +115,7 @@ const Login = () => {
                         </div>
                         <input
                           className="btn btn-success w-full mt-6"
-                          value={"signup"}
+                          value={"Login"}
                           type="submit"
                         />
                         <div>
