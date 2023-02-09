@@ -1,6 +1,6 @@
 import React from 'react';
-import card2 from '../../images/about/check-mark.svg';
-import card1 from '../../images/about/envelope.svg';
+import card2 from '../../images/about/editor.svg';
+import card1 from '../../images/about/check-mark.svg';
 import card3 from '../../images/about/envelope.svg';
 import why from '../../images/about/1.jpg';
 const About = () => {
