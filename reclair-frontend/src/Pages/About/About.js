@@ -12,7 +12,7 @@ const About = () => {
 
         </div>
 
-        <div className='grid md:grid-cols-3  lg:grid-cols-3 gap-4'>
+        <div className='grid md:grid-cols-3  lg:grid-cols-3 gap-4 px-5 py-5'>
                 <div className="card card-compact w-96 bg-base-100 shadow-xl  ">
                     <figure><img className='w-20' src={card1} /></figure>
                     <div className="card-body">
