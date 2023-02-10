@@ -4,6 +4,7 @@ import Contact from "../Contact/Contact";
 import Home from "../Home/Home";
 import Login from "../Login/Login";
 import SignUp from "../SignUp/SignUp";
+import Project from "../Project/Project";
 
 
 
@@ -29,6 +30,10 @@ export const router = createBrowserRouter([
             {
                 path:'/contact',
                 element:<Contact></Contact>
+            },
+            {
+                path:'/project',
+                element:<Project></Project>
             },
         ]
     }
