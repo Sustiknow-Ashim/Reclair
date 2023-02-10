@@ -1,4 +1,7 @@
 import React from 'react';
+
+import Contact from '../Contact/Contact';
+import SignUp from '../SignUp/SignUp';
 import About from '../About/About';
 import Banner from './Banner/Banner';
 
