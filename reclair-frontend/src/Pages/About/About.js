@@ -5,14 +5,13 @@ import card3 from '../../images/about/envelope.svg';
 import why from '../../images/about/1.jpg';
 const About = () => {
     return (
-        <div className='container mx-auto justify-center'>
-            <div>
+        <div className='container lg:px-12 md:px-8 sm:px-6 mx-auto justify-center'>
+            <div className='my-8'>
                 <h1 className='text-center font-bold text-2xl py-3 mt-4'>Explore to the World of Aspiration</h1>
                 <h5 className='text-center font semi-bold text-xl mb-4'>Know how we are trasforming the ecosystem for the Organization and Investors</h5>
-
             </div>
 
-            <div className='grid md:grid-cols-2 sm:grid-cols-1 lg:grid-cols-3 lg:gap-4 md:gap-3 sm:gap-2 '>
+            <div className='grid md:grid-cols-2 sm:grid-cols-1 lg:grid-cols-3 lg:gap-4 md:gap-3 sm:gap-2 my-6'>
 
                 <div className="card card-compact w-auto bg-base-100 shadow-xl  ">
                     <figure><img className='w-20' src={card1} /></figure>
@@ -75,13 +74,15 @@ const About = () => {
                 </div>
 
             </div>
-            <hr className='my-6'/>
+            <hr className='my-6' />
             <div className=''>
                 <h4 className="text-center text-3xl font-extrabold">Let's Start a new Project together!</h4>
                 <div className="card-actions justify-center my-6">
                     <button className="btn btn-outline btn-info mx-auto" >Let's Discuss</button>
                 </div>
             </div>
+
+
         </div>
     );
 };
