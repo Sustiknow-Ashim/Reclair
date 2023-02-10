@@ -5,7 +5,7 @@ import card3 from '../../images/about/envelope.svg';
 import why from '../../images/about/1.jpg';
 const About = () => {
     return (
-        <div>
+        <div className='container mx-auto'>
         <div>
             <h1 className='text-center font-bold text-2xl py-3'>Explore to the World of Aspiration</h1>
             <h5 className='text-center font semi-bold text-xl'>Know how we are trasforming the ecosystem for the Organization and Investors</h5>
