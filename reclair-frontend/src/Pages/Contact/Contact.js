@@ -46,7 +46,7 @@ const Contact = () => {
                 </svg>
               </a>
             </div>
-            <div className="w-full max-w-xl xl:px-8 xl:w-8/14">
+            <div className="w-full max-w-xl  xl:w-8/14">
               <div className="bg-white rounded shadow-2xl p-7 sm:p-10">
                 <h3 className="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl">
                 Write to us & we will get back to you soon
