@@ -1,3 +1,4 @@
+import { stringify } from '@firebase/util';
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
@@ -11,7 +12,8 @@ const {createUser, updateUser,emailVerify,googleSignIn,loading,setLoading} = use
     const [signupError,setSignupError] = useState(' ');
     const location = useLocation()
     const navigate = useNavigate()
-    const from = location.state?.from?.pathname || '/login'
+    const from = location.state?.from?.pathname || '/login';
+    const google = location.state?.from?.pathname || '/';
     const handleSignUp = (data) =>{
       setSignupError('')
       createUser(data.email,data.password)
@@ -25,7 +27,9 @@ const {createUser, updateUser,emailVerify,googleSignIn,loading,setLoading} = use
           displayName:data.name
         }
         updateUser(userInfo)
-        .then(()=>{})
+        .then(()=>{
+          saveUser(data.name, data.email)
+        })
         .catch(err => {
           
           console.log(err)
@@ -45,9 +49,26 @@ const {createUser, updateUser,emailVerify,googleSignIn,loading,setLoading} = use
       googleSignIn()
           .then(result => {
               const user = result.user
+              const socialUser = {
+                name: user.displayName,
+                email : user.email,
+                image:user.photoURL
+
+              };
               if (user) {
+                fetch('http://localhost:5000/allusers',{
+                  method:'POST',
+                  headers:{
+                    'content-type':'application/json'
+                  },
+                  body:JSON.stringify(socialUser),
+                })
+                .then(res=>res.json())
+                .then(data =>{
                   toast.success('Login Successfully')
-                  navigate(from, { replace: true })
+                  navigate(google, { replace: true })
+                })
+                 
 
               }
 
@@ -62,6 +83,22 @@ const {createUser, updateUser,emailVerify,googleSignIn,loading,setLoading} = use
               signupError(error.message);
             });
         };
+
+        const saveUser = (name,email)=>{
+          const user = {name,email}
+          fetch('http://localhost:5000/allusers',{
+            method:'POST',
+            headers:{
+              'content-type':'application/json'
+            },
+            body:stringify(user)
+          })
+          .then(res=> res.json())
+          .then(data => {
+            console.log(data)
+      
+          })
+        }
 
     return (
 

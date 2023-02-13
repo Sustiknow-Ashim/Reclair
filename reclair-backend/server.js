@@ -16,7 +16,15 @@ console.log(uri);
 
 async function run(){
     try{
+        const usersCollections = client.db('reclair').collection('allusers');
 
+        app.post('/allusers', async(req,res)=>{
+            const user = req.body;
+            const result = await usersCollections.insertOne(user)
+            res.send(result)
+        })
+
+        
     }
 
 

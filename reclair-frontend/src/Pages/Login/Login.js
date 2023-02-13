@@ -12,7 +12,7 @@ const Login = () => {
     const location = useLocation();
     const navigate = useNavigate()
     const from = location.state?.from?.pathname || '/'
-
+    const google = location.state?.from?.pathname || '/';
 
     const handleLogin = (data) => {
         setErrorLogin('')
@@ -40,11 +40,27 @@ const Login = () => {
       const handleGoogle = () => {
         googleSignIn()
             .then(result => {
-                const user = result.user
-                if (user) {
-                    toast.success('Login Successfully')
-                    navigate(from, { replace: true })
+                const user = result.user;
+                const socialUser = {
+                  name: user.displayName,
+                  email : user.email,
+                  image:user.photoURL
   
+                };
+                if (user) {
+                  fetch('http://localhost:5000/allusers',{
+                    method:'POST',
+                    headers:{
+                      'content-type':'application/json'
+                    },
+                    body:JSON.stringify(socialUser),
+                  })
+                  .then(res=>res.json())
+                .then(data =>{
+                  toast.success('Login Successfully')
+                  navigate(google, { replace: true })
+                })
+                    
                 }
   
             })
