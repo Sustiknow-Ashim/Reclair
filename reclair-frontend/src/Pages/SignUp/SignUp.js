@@ -6,7 +6,7 @@ import { AuthContext } from '../../Context/AuthProvider';
 import login from '../../images/login/signup.jpg'
 const SignUp = () => {
 
-const {createUser, updateUser,emailVerify,googleSignIn} = useContext(AuthContext)
+const {createUser, updateUser,emailVerify,googleSignIn,loading,setLoading} = useContext(AuthContext)
     const { register,formState: { errors }, handleSubmit } = useForm();
     const [signupError,setSignupError] = useState(' ');
     const location = useLocation()
@@ -33,6 +33,7 @@ const {createUser, updateUser,emailVerify,googleSignIn} = useContext(AuthContext
         })
       })
       .catch(error =>{
+        setLoading(false)
         console.log(error);
         setSignupError(error.message)
       })
@@ -134,7 +135,7 @@ const {createUser, updateUser,emailVerify,googleSignIn} = useContext(AuthContext
                         </div>
                         <input
                           className="btn btn-success w-full mt-6"
-                          value={"signup"}
+                          value={`${loading ? 'loading.....' : 'signup'} `}
                           type="submit"
                         />
                         {signupError && <p className="text-red-600">{signupError}</p>}

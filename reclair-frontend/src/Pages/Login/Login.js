@@ -8,7 +8,7 @@ import login from '../../images/login/signup.jpg'
 const Login = () => {
     const { register,formState: { errors }, handleSubmit } = useForm();
     const [errorLogin,setErrorLogin] = useState('')
-    const {logIn,googleSignIn} = useContext(AuthContext);
+    const {logIn,googleSignIn,loading,setLoading} = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate()
     const from = location.state?.from?.pathname || '/'
@@ -31,6 +31,7 @@ const Login = () => {
          
         })
         .catch(error => {
+          setLoading(false)
           console.error(error.message)
           setErrorLogin(error.message)
         })
@@ -115,7 +116,7 @@ const Login = () => {
                         </div>
                         <input
                           className="btn btn-success w-full mt-6"
-                          value={"Login"}
+                          value={`${loading ? 'Loading....' :  'Login'} `}
                           type="submit"
                         />
                         <div>
