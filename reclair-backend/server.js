@@ -30,7 +30,7 @@ async function run(){
 run().catch(console.log())
 
 app.get('/', async(req,res)=>{
-    res.send("sustiknow server running")
+    res.send("sustiknow server test running")
 })
 
 app.listen(port,()=>{
