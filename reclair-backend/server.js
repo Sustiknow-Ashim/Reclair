@@ -1,10 +1,9 @@
+import express from 'express';
+import cors from 'cors';
+import connectDB from './config/db.js';
+import projectRoute from './routes/projectRoute.js'
 
-
-const express = require('express')
-const cors = require('cors')
-const app = express()
-const { MongoClient, ServerApiVersion } = require('mongodb');
-const port = process.env.PORT || 5000;
+const app = express();
 
 app.use(cors())
 app.use(express.json())
@@ -16,15 +15,7 @@ console.log(uri);
 
 async function run(){
     try{
-        const usersCollections = client.db('reclair').collection('allusers');
 
-        app.post('/allusers', async(req,res)=>{
-            const user = req.body;
-            const result = await usersCollections.insertOne(user)
-            res.send(result)
-        })
-
-        
     }
 
 
@@ -40,6 +31,12 @@ run().catch(console.log())
 app.get('/', async(req,res)=>{
     res.send("sustiknow server test running")
 })
+
+app.use('/api/project', projectRoute)
+
+
+
+const port = process.env.PORT || 5000;
 
 app.listen(port,()=>{
     console.log(`the server running port 5000 ${port}`)
