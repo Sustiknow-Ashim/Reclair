@@ -16,6 +16,7 @@ console.log(uri);
 
 async function run(){
     try{
+
         const usersCollections = client.db('reclair').collection('allusers');
 
         app.post('/allusers', async(req,res)=>{
@@ -25,6 +26,8 @@ async function run(){
         })
 
         
+
+
     }
 
 
@@ -39,6 +42,7 @@ run().catch(console.log())
 
 app.get('/', async(req,res)=>{
     res.send("sustiknow server test running")
+
 })
 
 app.listen(port,()=>{

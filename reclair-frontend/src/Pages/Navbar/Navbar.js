@@ -56,7 +56,8 @@ const Navbar = () => {
                             <li><a>Submenu </a></li>
                         </ul>
                     </li>
-                    <li><Link to='contact'>Contact Us</Link></li>
+                    <li><Link to='/dashboard'>Dashboard</Link></li>
+                    <li><Link to='/contact'>Contact Us</Link></li>
                 </ul>
             </div>
             <div className="navbar-end">
