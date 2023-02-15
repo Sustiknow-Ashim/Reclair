@@ -4,9 +4,12 @@ import icei from '../../images/about/solar village 2.jpg';
 import pro from '../../images/about/pro3.jpeg';
 
 function Project() {
+
+  
+
   return (
     <div >
-      <div className="container font-bold py-2 px-4 rounded">
+      <div className="container font-bold py-2 my-12 px-4 rounded">
         <div className="card lg:card-side bg-base-100 shadow-xl px-5 py-5">
           <figure><img className='w-80' src={adamas} alt="Album" /></figure>
           <div className="card-body">
@@ -14,7 +17,6 @@ function Project() {
             <p>School of Management & Computer Science</p>
             <p>KWP:78.840</p>
 
-            {/* Trying to appling graph/card */}
             <div className="card-actions justify-end">
               <div class="w-full md:w-1/3 px-2">
                 <div class="rounded-lg shadow-sm mb-4">
