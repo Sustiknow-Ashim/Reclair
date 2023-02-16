@@ -45,7 +45,6 @@ const Login = () => {
                   name: user.displayName,
                   email : user.email,
                   image:user.photoURL
-  
                 };
                 if (user) {
                     toast.success('Login Successfully')
