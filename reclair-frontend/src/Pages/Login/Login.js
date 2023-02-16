@@ -45,7 +45,6 @@ const Login = () => {
                   name: user.displayName,
                   email : user.email,
                   image:user.photoURL
-  
                 };
                 if (user) {
                   fetch('http://localhost:5000/api/user',{
