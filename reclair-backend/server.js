@@ -16,7 +16,22 @@ console.log(uri);
 
 async function run(){
     try{
+<<<<<<< HEAD
 
+=======
+
+        const usersCollections = client.db('reclair').collection('allusers');
+
+        app.post('/allusers', async(req,res)=>{
+            const user = req.body;
+            const result = await usersCollections.insertOne(user)
+            res.send(result)
+        })
+
+        
+
+
+>>>>>>> 653b6558b7063d78479e07c55bf36a4a89a03793
     }
 
 
@@ -31,6 +46,10 @@ run().catch(console.log())
 
 app.get('/', async(req,res)=>{
     res.send("sustiknow server test running")
+<<<<<<< HEAD
+=======
+
+>>>>>>> 653b6558b7063d78479e07c55bf36a4a89a03793
 })
 
 
