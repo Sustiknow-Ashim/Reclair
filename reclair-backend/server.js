@@ -4,6 +4,10 @@ import connectDB from './config/db.js';
 import projectRoute from './routes/projectRoute.js'
 import userRoute from './routes/userRoute.js'
 
+
+
+// trying to update for git
+
 const app = express();
 
 app.use(cors())
