@@ -52,8 +52,6 @@ app.use('/api/project', projectRoute);
 
 app.use('/api/user', userRoute);
 
-
-
 const port = process.env.PORT || 5000;
 
 app.listen(port,()=>{
