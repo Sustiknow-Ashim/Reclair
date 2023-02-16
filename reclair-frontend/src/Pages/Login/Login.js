@@ -5,9 +5,6 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
 import login from '../../images/login/signup.jpg'
 
-
-// trying to update for git
-
 const Login = () => {
     const { register,formState: { errors }, handleSubmit } = useForm();
     const [errorLogin,setErrorLogin] = useState('')
@@ -48,11 +45,22 @@ const Login = () => {
                   name: user.displayName,
                   email : user.email,
                   image:user.photoURL
+  
                 };
                 if (user) {
-                    toast.success('Login Successfully')
-                    navigate(from, { replace: true })
-  
+                  fetch('http://localhost:5000/api/user',{
+                    method:'POST',
+                    headers:{
+                      'content-type':'application/json'
+                    },
+                    body:JSON.stringify(socialUser),
+                  })
+                  .then(res=>res.json())
+                .then(data =>{
+                  toast.success('Login Successfully')
+                  navigate(google, { replace: true })
+                })
+                    
                 }
   
             })

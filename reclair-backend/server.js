@@ -28,10 +28,6 @@ async function run(){
             const result = await usersCollections.insertOne(user)
             res.send(result)
         })
-
-        
-
-
     }
 
 
