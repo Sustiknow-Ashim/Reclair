@@ -48,19 +48,9 @@ const Login = () => {
   
                 };
                 if (user) {
-                  fetch('http://localhost:5000/allusers',{
-                    method:'POST',
-                    headers:{
-                      'content-type':'application/json'
-                    },
-                    body:JSON.stringify(socialUser),
-                  })
-                  .then(res=>res.json())
-                .then(data =>{
-                  toast.success('Login Successfully')
-                  navigate(google, { replace: true })
-                })
-                    
+                    toast.success('Login Successfully')
+                    navigate(from, { replace: true })
+  
                 }
   
             })

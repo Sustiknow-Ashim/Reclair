@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import connectDB from './config/db.js';
 import projectRoute from './routes/projectRoute.js'
+import userRoute from './routes/userRoute.js'
 
 const app = express();
 
@@ -32,7 +33,13 @@ app.get('/', async(req,res)=>{
     res.send("sustiknow server test running")
 })
 
-app.use('/api/project', projectRoute)
+
+
+
+
+app.use('/api/project', projectRoute);
+
+app.use('/api/user', userRoute);
 
 
 

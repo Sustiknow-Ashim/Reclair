@@ -7,13 +7,12 @@ import { AuthContext } from '../../Context/AuthProvider';
 import login from '../../images/login/signup.jpg'
 const SignUp = () => {
 
-const {createUser, updateUser,emailVerify,googleSignIn,loading,setLoading} = useContext(AuthContext)
+const {createUser, updateUser,emailVerify,googleSignIn} = useContext(AuthContext)
     const { register,formState: { errors }, handleSubmit } = useForm();
     const [signupError,setSignupError] = useState(' ');
     const location = useLocation()
     const navigate = useNavigate()
-    const from = location.state?.from?.pathname || '/login';
-    const google = location.state?.from?.pathname || '/';
+    const from = location.state?.from?.pathname || '/login'
     const handleSignUp = (data) =>{
       setSignupError('')
       createUser(data.email,data.password)
@@ -22,14 +21,12 @@ const {createUser, updateUser,emailVerify,googleSignIn,loading,setLoading} = use
         console.log(user);
         handleVerifyEmail()
         toast.success("User created successfully please verify your email")
-        navigate(from,{replace:true})
+        navigate(from, { replace: true })
         const userInfo = {
-          displayName:data.name
+          displayName: data.name
         }
         updateUser(userInfo)
-        .then(()=>{
-          saveUser(data.name, data.email)
-        })
+        .then(()=>{})
         .catch(err => {
           
           console.log(err)
@@ -37,68 +34,34 @@ const {createUser, updateUser,emailVerify,googleSignIn,loading,setLoading} = use
         })
       })
       .catch(error =>{
-        setLoading(false)
         console.log(error);
         setSignupError(error.message)
       })
 
 
-    }
+  }
 
     const handleGoogle = () => {
       googleSignIn()
           .then(result => {
               const user = result.user
-              const socialUser = {
-                name: user.displayName,
-                email : user.email,
-                image:user.photoURL
-
-              };
               if (user) {
-                fetch('http://localhost:5000/allusers',{
-                  method:'POST',
-                  headers:{
-                    'content-type':'application/json'
-                  },
-                  body:JSON.stringify(socialUser),
-                })
-                .then(res=>res.json())
-                .then(data =>{
                   toast.success('Login Successfully')
-                  navigate(google, { replace: true })
-                })
-                 
+                  navigate(from, { replace: true })
 
-              }
-
-          })
-          .catch(error => console.error(error))
         }
 
-        const handleVerifyEmail = () => {
-          emailVerify()
-            .then(() => {})
-            .catch((error) => {
-              signupError(error.message);
-            });
-        };
+      })
+      .catch(error => console.error(error))
+  }
 
-        const saveUser = (name,email)=>{
-          const user = {name,email}
-          fetch('http://localhost:5000/allusers',{
-            method:'POST',
-            headers:{
-              'content-type':'application/json'
-            },
-            body:stringify(user)
-          })
-          .then(res=> res.json())
-          .then(data => {
-            console.log(data)
-      
-          })
-        }
+  const handleVerifyEmail = () => {
+    emailVerify()
+      .then(() => { })
+      .catch((error) => {
+        signupError(error.message);
+      });
+  };
 
     return (
 
@@ -172,7 +135,7 @@ const {createUser, updateUser,emailVerify,googleSignIn,loading,setLoading} = use
                         </div>
                         <input
                           className="btn btn-success w-full mt-6"
-                          value={`${loading ? 'loading.....' : 'signup'} `}
+                          value={"signup"}
                           type="submit"
                         />
                         {signupError && <p className="text-red-600">{signupError}</p>}
