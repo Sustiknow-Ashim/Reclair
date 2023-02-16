@@ -70,7 +70,7 @@ const {createUser, updateUser,emailVerify,googleSignIn} = useContext(AuthContext
           <div className="relative">
             <img
               src={login}
-              className="absolute inset-0 object-cover w-full h-full"
+              className="absolute inset-0 object-cover d w-full h-full"
               alt=""
             />
             <div className="relative bg-gray-900 bg-opacity-75">
