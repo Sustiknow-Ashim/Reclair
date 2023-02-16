@@ -12,7 +12,7 @@ app.use(express.json())
 connectDB();
 
 app.get('/', async(req,res)=>{
-    res.send("sustiknow server running")
+    res.send("server running")
 })
 
 

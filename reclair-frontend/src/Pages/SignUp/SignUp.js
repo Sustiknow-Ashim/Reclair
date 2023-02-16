@@ -7,6 +7,7 @@ import { AuthContext } from '../../Context/AuthProvider';
 import login from '../../images/login/signup.jpg'
 const SignUp = () => {
 
+
   const { createUser, updateUser, emailVerify, googleSignIn, loading, setLoading } = useContext(AuthContext)
   const { register, formState: { errors }, handleSubmit } = useForm();
   const [signupError, setSignupError] = useState(' ');
