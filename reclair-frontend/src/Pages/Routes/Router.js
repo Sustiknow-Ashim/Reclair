@@ -4,7 +4,7 @@ import Contact from "../Contact/Contact";
 import Home from "../Home/Home";
 import Login from "../Login/Login";
 import SignUp from "../SignUp/SignUp";
-import Project from "../Project/Project";
+import ProjectDetails from "../Project/ProjectDetails";
 
 
 
@@ -33,7 +33,7 @@ export const router = createBrowserRouter([
             },
             {
                 path:'/project',
-                element:<Project></Project>
+                element:<ProjectDetails></ProjectDetails>
             },
         ]
     }
