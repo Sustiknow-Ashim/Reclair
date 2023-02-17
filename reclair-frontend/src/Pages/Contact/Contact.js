@@ -1,11 +1,11 @@
 import React from "react";
-import bg from '../../images/login/bg.jpg';
+import solar1 from '../../images/login/solar1.jpg';
 import './Contact.css'
 const Contact = () => {
   return (
     <div className="relative">
       <img
-        src={bg}
+        src={solar1}
         className="absolute inset-0 object-cover w-full h-full"
         alt=""
       />
@@ -22,7 +22,7 @@ const Contact = () => {
         <div className="relative px-4 py-8  overflow-hidden sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
           <div className="flex flex-col items-center justify-between xl:flex-row">
             <div className="w-full max-w-xl mb-12 xl:mb-0 xl:pr-16 xl:w-7/12">
-              <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-white sm:text-4xl sm:leading-none">
+              <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-green-50 sm:text-4xl sm:leading-none">
                 The quick, brown fox <br className="hidden md:block" />
                 jumps over a lazy dog
               </h2>
@@ -107,11 +107,11 @@ const Contact = () => {
                   </div>
                   <div className="mt-4 mb-2 sm:mb-4">
                     <button type="submit" className="btn w-full btn-success">
-                      Send You'r mail
+                      Send Your mail
                     </button>
                   </div>
                   
-                  <p className="text-xs text-gray-600 sm:text-sm">
+                  <p className="text-xs text-gray-600 sm:text-sm font-semibold">
                     We respect your privacy. Unsubscribe at any time.
                   </p>
                 </form>
