@@ -4,10 +4,6 @@ import connectDB from './config/db.js';
 import projectRoute from './routes/projectRoute.js'
 import userRoute from './routes/userRoute.js'
 
-
-
-// trying to update for git
-
 const app = express();
 
 app.use(cors())
@@ -16,7 +12,7 @@ app.use(express.json())
 connectDB();
 
 app.get('/', async(req,res)=>{
-    res.send("Server running")
+    res.send("sustiknow server running")
 })
 
 
@@ -26,6 +22,8 @@ app.get('/', async(req,res)=>{
 app.use('/api/project', projectRoute);
 
 app.use('/api/user', userRoute);
+
+
 
 const port = process.env.PORT || 5000;
 
