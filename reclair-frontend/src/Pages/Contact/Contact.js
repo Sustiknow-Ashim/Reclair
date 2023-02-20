@@ -29,8 +29,8 @@ const Contact = () => {
               <p className="text-center font-extrabold text-6xl text-amber-300 ">RECLAIR </p>
         
             </div>
-            <div className="w-full max-w-xl  xl:w-8/14">
-              <div className="bg-white rounded shadow-2xl p-7 sm:p-10">
+            <div className="w-full max-w-xl  xl:w-8/14 ">
+              <div className="bg-gray-700 rounded shadow-2xl p-7 sm:p-10">
                 <h3 className="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl">
                 Write to us & we will get back to you soon
                 </h3>
@@ -77,21 +77,21 @@ const Contact = () => {
                       className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
                       id="email"
                       name="email"
-                    />
-                    <label className="inline-block  font-medium mb-1 sm:mb-2" required>
-                    <textarea placeholder="Message Here" className="textarea textarea-bordered textarea-md w-full max-w-xs" ></textarea>
+                    /> 
+                    <label className="inline-block  font-medium mb-1 sm:mb-2 " required>
+                    <textarea placeholder="Message Here" className=" textarea textarea-bordered textarea-md  max-w-xs w-full" ></textarea>
                     </label>
-                    <div>
-                    <input type="file" className="file-input file-input-bordered file-input-md w-full max-w-xs" />
+                    <div className="max-w-3xl">
+                    <input type="file" className="file-input file-input-bordered file-input-md w-full max-w-xs " />
                   </div>
                   </div>
                   <div className="mt-4 mb-2 sm:mb-4">
-                    <button type="submit" className="btn w-full btn-success">
-                      Send Your mail
+                    <button type="submit" className="btn w-full btn-outline btn-success ring-offset-2 ring-4">
+                      Send Your Mail
                     </button>
                   </div>
                   
-                  <p className="text-xs text-gray-600 sm:text-sm font-semibold">
+                  <p className="text-xs text-green-600 sm:text-sm font-semibold ">
                     We respect your privacy. Unsubscribe at any time.
                   </p>
                 </form>
