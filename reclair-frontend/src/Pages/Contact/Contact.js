@@ -81,7 +81,7 @@ const Contact = () => {
                     <label className="inline-block  font-medium mb-1 sm:mb-2 " required>
                     <textarea placeholder="Message Here" className=" textarea textarea-bordered textarea-md  max-w-xs w-full" ></textarea>
                     </label>
-                    <div className="max-w-3xl">
+                    <div >
                     <input type="file" className="file-input file-input-bordered file-input-md w-full max-w-xs " />
                   </div>
                   </div>
