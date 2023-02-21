@@ -78,11 +78,11 @@ const Contact = () => {
                       id="email"
                       name="email"
                     /> 
-                    <label className="inline-block  font-medium mb-1 sm:mb-2 " required>
-                    <textarea placeholder="Message Here" className=" textarea textarea-bordered textarea-md  max-w-xs w-full" ></textarea>
-                    </label>
+                   <div className="w-full">
+                    <textarea placeholder="Message Here" className=" textarea textarea-bordered w-full" ></textarea>
+                    </div>
                     <div >
-                    <input type="file" className="file-input file-input-bordered file-input-md w-full max-w-xs " />
+                    <input type="file" className="file-input file-input-bordered file-input-md w-full  " />
                   </div>
                   </div>
                   <div className="mt-4 mb-2 sm:mb-4">
