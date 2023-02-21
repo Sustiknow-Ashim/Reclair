@@ -31,7 +31,7 @@ const Contact = () => {
             </div>
             <div className="w-full max-w-xl  xl:w-8/14 ">
               <div className="bg-gray-700 rounded shadow-2xl p-7 sm:p-10">
-                <h3 className="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl">
+                <h3 className="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl text-sky-100">
                 Write to us & we will get back to you soon
                 </h3>
                 <form>
