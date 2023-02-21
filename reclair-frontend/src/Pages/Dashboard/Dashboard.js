@@ -2,15 +2,17 @@ import React from 'react';
 
 const Dashboard = () => {
   return (
-    <main class="h-full overflow-y-auto">
+    <div>
+      <main class="h-full overflow-y-auto">
         <div class="container px-6 mx-auto grid">
           <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
             Dashboard
           </h2>
           
-          {/* <!-- Cards --> */}
+        
+      
           <div class="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4">
-            {/* <!-- Card --> */}
+            
             <div class="flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800">
               <div class="p-3 mr-4 text-orange-500 bg-orange-100 rounded-full dark:text-orange-100 dark:bg-orange-500">
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -21,14 +23,14 @@ const Dashboard = () => {
               </div>
               <div>
                 <p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400">
-                  Total clients
+                  Total Sales
                 </p>
                 <p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
-                  6389
+                  985
                 </p>
               </div>
             </div>
-            {/* <!-- Card --> */}
+            
             <div class="flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800">
               <div class="p-3 mr-4 text-green-500 bg-green-100 rounded-full dark:text-green-100 dark:bg-green-500">
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -39,14 +41,14 @@ const Dashboard = () => {
               </div>
               <div>
                 <p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400">
-                  Account balance
+                  Revenue
                 </p>
                 <p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
-                  $ 46,760.89
+                  $ 18,500
                 </p>
               </div>
             </div>
-            {/* <!-- Card --> */}
+            
             <div class="flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800">
               <div class="p-3 mr-4 text-blue-500 bg-blue-100 rounded-full dark:text-blue-100 dark:bg-blue-500">
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -57,14 +59,14 @@ const Dashboard = () => {
               </div>
               <div>
                 <p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400">
-                  New sales
+                  Cost
                 </p>
                 <p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
-                  376
+                  15500
                 </p>
               </div>
             </div>
-            {/* <!-- Card --> */}
+         
             <div class="flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800">
               <div class="p-3 mr-4 text-teal-500 bg-teal-100 rounded-full dark:text-teal-100 dark:bg-teal-500">
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -75,16 +77,16 @@ const Dashboard = () => {
               </div>
               <div>
                 <p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400">
-                  Pending contacts
+                  Profit
                 </p>
                 <p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
-                  35
+                  35500
                 </p>
               </div>
             </div>
           </div>
 
-          {/* <!-- New Table --> */}
+     
           <div class="w-full overflow-hidden rounded-lg shadow-xs">
             <div class="w-full overflow-x-auto">
               <table class="w-full whitespace-no-wrap">
@@ -101,7 +103,7 @@ const Dashboard = () => {
                   <tr class="text-gray-700 dark:text-gray-400">
                     <td class="px-4 py-3">
                       <div class="flex items-center text-sm">
-                        {/* <!-- Avatar with inset shadow --> */}
+                    
                         <div class="relative hidden w-8 h-8 mr-3 rounded-full md:block">
                           <img class="object-cover w-full h-full rounded-full"
                             src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
@@ -133,7 +135,7 @@ const Dashboard = () => {
                   <tr class="text-gray-700 dark:text-gray-400">
                     <td class="px-4 py-3">
                       <div class="flex items-center text-sm">
-                        {/* <!-- Avatar with inset shadow --> */}
+                 
                         <div class="relative hidden w-8 h-8 mr-3 rounded-full md:block">
                           <img class="object-cover w-full h-full rounded-full"
                             src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&facepad=3&fit=facearea&s=707b9c33066bf8808c934c8ab394dff6"
@@ -165,7 +167,7 @@ const Dashboard = () => {
                   <tr class="text-gray-700 dark:text-gray-400">
                     <td class="px-4 py-3">
                       <div class="flex items-center text-sm">
-                        {/* <!-- Avatar with inset shadow --> */}
+                    
                         <div class="relative hidden w-8 h-8 mr-3 rounded-full md:block">
                           <img class="object-cover w-full h-full rounded-full"
                             src="https://images.unsplash.com/photo-1551069613-1904dbdcda11?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
@@ -197,7 +199,7 @@ const Dashboard = () => {
                   <tr class="text-gray-700 dark:text-gray-400">
                     <td class="px-4 py-3">
                       <div class="flex items-center text-sm">
-                        {/* <!-- Avatar with inset shadow --> */}
+                      
                         <div class="relative hidden w-8 h-8 mr-3 rounded-full md:block">
                           <img class="object-cover w-full h-full rounded-full"
                             src="https://images.unsplash.com/photo-1551006917-3b4c078c47c9?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
@@ -229,7 +231,7 @@ const Dashboard = () => {
                   <tr class="text-gray-700 dark:text-gray-400">
                     <td class="px-4 py-3">
                       <div class="flex items-center text-sm">
-                        {/* <!-- Avatar with inset shadow --> */}
+                     
                         <div class="relative hidden w-8 h-8 mr-3 rounded-full md:block">
                           <img class="object-cover w-full h-full rounded-full"
                             src="https://images.unsplash.com/photo-1546456073-6712f79251bb?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
@@ -261,7 +263,7 @@ const Dashboard = () => {
                   <tr class="text-gray-700 dark:text-gray-400">
                     <td class="px-4 py-3">
                       <div class="flex items-center text-sm">
-                        {/* <!-- Avatar with inset shadow --> */}
+                    
                         <div class="relative hidden w-8 h-8 mr-3 rounded-full md:block">
                           <img class="object-cover w-full h-full rounded-full"
                             src="https://images.unsplash.com/photo-1502720705749-871143f0e671?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&s=b8377ca9f985d80264279f277f3a67f5"
@@ -293,7 +295,7 @@ const Dashboard = () => {
                   <tr class="text-gray-700 dark:text-gray-400">
                     <td class="px-4 py-3">
                       <div class="flex items-center text-sm">
-                        {/* <!-- Avatar with inset shadow --> */}
+                    
                         <div class="relative hidden w-8 h-8 mr-3 rounded-full md:block">
                           <img class="object-cover w-full h-full rounded-full"
                             src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
@@ -325,7 +327,7 @@ const Dashboard = () => {
                   <tr class="text-gray-700 dark:text-gray-400">
                     <td class="px-4 py-3">
                       <div class="flex items-center text-sm">
-                        {/* <!-- Avatar with inset shadow --> */}
+                 
                         <div class="relative hidden w-8 h-8 mr-3 rounded-full md:block">
                           <img class="object-cover w-full h-full rounded-full"
                             src="https://images.unsplash.com/photo-1566411520896-01e7ca4726af?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
@@ -357,7 +359,7 @@ const Dashboard = () => {
                   <tr class="text-gray-700 dark:text-gray-400">
                     <td class="px-4 py-3">
                       <div class="flex items-center text-sm">
-                        {/* <!-- Avatar with inset shadow --> */}
+                        
                         <div class="relative hidden w-8 h-8 mr-3 rounded-full md:block">
                           <img class="object-cover w-full h-full rounded-full"
                             src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
@@ -394,7 +396,7 @@ const Dashboard = () => {
                 Showing 21-30 of 100
               </span>
               <span class="col-span-2"></span>
-              {/* <!-- Pagination --> */}
+            
               <span class="flex col-span-4 mt-2 sm:mt-auto sm:justify-end">
                 <nav aria-label="Table navigation">
                   <ul class="inline-flex items-center">
@@ -458,7 +460,6 @@ const Dashboard = () => {
             </div>
           </div>
 
-          {/* <!-- Charts --> */}
           <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
             Charts
           </h2>
@@ -467,9 +468,11 @@ const Dashboard = () => {
               <h4 class="mb-4 font-semibold text-gray-800 dark:text-gray-300">
                 Revenue
               </h4>
-              <canvas id="pie"></canvas>
+              <canvas id="pie">
+                
+              </canvas>
               <div class="flex justify-center mt-4 space-x-3 text-sm text-gray-600 dark:text-gray-400">
-                {/* <!-- Chart legend --> */}
+           
                 <div class="flex items-center">
                   <span class="inline-block w-3 h-3 mr-1 bg-blue-500 rounded-full"></span>
                   <span>Shirts</span>
@@ -490,7 +493,7 @@ const Dashboard = () => {
               </h4>
               <canvas id="line"></canvas>
               <div class="flex justify-center mt-4 space-x-3 text-sm text-gray-600 dark:text-gray-400">
-                {/* <!-- Chart legend --> */}
+                
                 <div class="flex items-center">
                   <span class="inline-block w-3 h-3 mr-1 bg-teal-600 rounded-full"></span>
                   <span>Organic</span>
@@ -504,6 +507,7 @@ const Dashboard = () => {
           </div>
         </div>
       </main>
+    </div>
   );
 };
 
