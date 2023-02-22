@@ -6,6 +6,7 @@ import Login from "../Login/Login";
 import Project from "../Project/Project";
 import SignUp from "../SignUp/SignUp";
 import ProjectDetails from "../Project/ProjectDetails";
+import Dashboard from "../Dashboard/Dashboard";
 
 
 
@@ -27,6 +28,10 @@ export const router = createBrowserRouter([
             {
                 path:'/login',
                 element:<Login></Login>
+            },
+            {
+                path:'/dashboard',
+                element:<Dashboard></Dashboard>
             },
             {
                 path:'/contact',
