@@ -7,6 +7,7 @@ import Project from "../Project/Project";
 import SignUp from "../SignUp/SignUp";
 import ProjectDetails from "../Project/ProjectDetails";
 import Dashboard from "../Dashboard/Dashboard";
+import Myproject from "../My Project/Myproject";
 
 
 
@@ -40,6 +41,10 @@ export const router = createBrowserRouter([
             {
                 path:'/project',
                 element:<ProjectDetails></ProjectDetails>
+            },
+            {
+                path:'/myproject',
+                element:<Myproject></Myproject>
             },
         ]
     }
