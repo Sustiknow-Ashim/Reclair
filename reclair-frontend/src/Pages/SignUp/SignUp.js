@@ -1,3 +1,4 @@
+
 import { stringify } from '@firebase/util';
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -6,6 +7,8 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
 import login from '../../images/login/signup.jpg'
 const SignUp = () => {
+
+// trying to update for git
 
   const { createUser, updateUser, emailVerify, googleSignIn, loading, setLoading } = useContext(AuthContext)
   const { register, formState: { errors }, handleSubmit } = useForm();
@@ -53,7 +56,6 @@ const SignUp = () => {
           name: user.displayName,
           email: user.email,
           image: user.photoURL
-
         };
         if (user) {
           fetch('http://localhost:5000/api/user', {
