@@ -3,12 +3,10 @@ import Main from "../../Layout/Main";
 import Contact from "../Contact/Contact";
 import Home from "../Home/Home";
 import Login from "../Login/Login";
+import Project from "../Project/Project";
 import SignUp from "../SignUp/SignUp";
 import ProjectDetails from "../Project/ProjectDetails";
-import PrivateRoute from "../PrivateRoute/PrivateRoute";
-import AdminDashboard from "../AdminDashboard/AdminDashboard";
-import AllUsers from "../AdminDashboard/AllUsers/AllUsers";
-import AddProjects from "../AdminDashboard/AddProjects/AddProjects";
+import Dashboard from "../Dashboard/Dashboard";
 
 
 
@@ -30,6 +28,10 @@ export const router = createBrowserRouter([
             {
                 path:'/login',
                 element:<Login></Login>
+            },
+            {
+                path:'/dashboard',
+                element:<Dashboard></Dashboard>
             },
             {
                 path:'/contact',

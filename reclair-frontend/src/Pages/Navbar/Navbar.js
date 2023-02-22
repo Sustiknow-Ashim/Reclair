@@ -42,6 +42,7 @@ const Navbar = () => {
                     <li tabIndex={0}>
                         <Link to="/project">Project</Link>
                     </li>
+                    <li><Link to='/dashboard'>Dashboard</Link></li>
                     <li><Link to='contact'>Contact Us</Link></li>
                 </ul>
             </div>
