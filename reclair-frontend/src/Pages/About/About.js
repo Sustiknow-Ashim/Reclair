@@ -58,9 +58,9 @@ const About = () => {
                         <img className='w-90 rounded' src={why} alt='solar Image' />
                     </div>
                     <div className='justify-end mx-4 '>
-                        <h1 className='text-center font-bold text-lime-400 text-xl mb-2'>Why Choose Us!</h1>
+                        <h1 className='text-center font-bold text-lime-400 text-xl mb-1'>Why Choose Us!</h1>
                         <h2 className='text-center font-semibold text-red-500 my-1'>Complete Commercial & Residential Solar Systems</h2>
-                        <p className='text-justify lg:text-xl sm:text-sm '>Good We provides a solution to generate clean electricity for your own solar-powered home. When it comes to residential solutions featuring superior safety and easy installation, GoodWe is the ideal choice for homeowners to going solar. Enjoy your unparalleled experience of green energy, optimal solar energy usage, reduced electricity bills and much more.Exploring and utilizing smart technologies and advanced expertise, Goodwe is relentless about offering users residential & small C&I storage solutions to protect users from rising electricity costs. We strive to create reliable solutions for users to maximize self-consumption, ensure power safety during an outage, take smart control of home power management, and realize energy independence.</p>
+                        <p className='text-justify lg:text-xl sm:text-sm '>Good We provides a solution to generate clean electricity for your own solar-powered home. When it comes to residential solutions featuring superior safety and easy installation, GoodWe is the ideal choice for homeowners to going solar. Enjoy your unparalleled experience of green energy, optimal solar energy usage, reduced electricity bills and much more.Exploring and utilizing smart technologies and advanced expertise, Goodwe is relentless about offering users residential & small C&I storage solutions to protect users from rising electricity costs.</p>
                     </div>
                 </div>
             </div>

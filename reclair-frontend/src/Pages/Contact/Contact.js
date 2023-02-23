@@ -1,11 +1,11 @@
 import React from "react";
-import bg from '../../images/login/bg.jpg';
+import solar1 from '../../images/login/solar1.jpg';
 import './Contact.css'
 const Contact = () => {
   return (
     <div className="relative">
       <img
-        src={bg}
+        src={solar1}
         className="absolute inset-0 object-cover w-full h-full"
         alt=""
       />
@@ -22,33 +22,16 @@ const Contact = () => {
         <div className="relative px-4 py-8  overflow-hidden sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
           <div className="flex flex-col items-center justify-between xl:flex-row">
             <div className="w-full max-w-xl mb-12 xl:mb-0 xl:pr-16 xl:w-7/12">
-              <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-white sm:text-4xl sm:leading-none">
-                The quick, brown fox <br className="hidden md:block" />
-                jumps over a lazy dog
+              <h2 className="max-w-lg mb-6 font-sans text-6xl font-bold tracking-tight text-amber-50 sm:text-4xl sm:leading-none text-center animate-pulse">
+                WELCOME TO 
+               
               </h2>
-              <p className="max-w-xl mb-4 text-base text-gray-200 md:text-lg">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudan, totam rem aperiam, eaque ipsa
-                quae.
-              </p>
-              <a
-                href="/"
-                aria-label=""
-                className="inline-flex items-center font-semibold tracking-wider transition-colors duration-200 text-teal-accent-400 hover:text-teal-accent-700"
-              >
-                Learn more
-                <svg
-                  className="inline-block w-3 ml-2"
-                  fill="currentColor"
-                  viewBox="0 0 12 12"
-                >
-                  <path d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z" />
-                </svg>
-              </a>
+              <p className="text-center font-extrabold text-6xl text-amber-300 ">RECLAIR </p>
+        
             </div>
-            <div className="w-full max-w-xl  xl:w-8/14">
-              <div className="bg-white rounded shadow-2xl p-7 sm:p-10">
-                <h3 className="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl">
+            <div className="w-full max-w-xl  xl:w-8/14 ">
+              <div className="bg-gray-700 rounded shadow-2xl p-7 sm:p-10">
+                <h3 className="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl text-sky-100">
                 Write to us & we will get back to you soon
                 </h3>
                 <form>
@@ -70,7 +53,7 @@ const Contact = () => {
                   </div>
                   <div className="mb-1 sm:mb-2">
                     <label className="inline-block mb-1 font-medium">
-                      You'r Number
+                      Your Number
                     </label>
                     <input
                       name="number"
@@ -94,24 +77,21 @@ const Contact = () => {
                       className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
                       id="email"
                       name="email"
-                    />
-                    <label className="block" required>
-                      <textarea
-                        placeholder="Message  Here"
-                        className="textarea textarea-bordered textarea-lg wd "
-                      ></textarea>
-                    </label>
-                    <div>
-                  <input type="file" className="file-input mb-5 w-full max-w-xs" />
+                    /> 
+                   <div className="w-full">
+                    <textarea placeholder="Message Here" className=" textarea textarea-bordered w-full" ></textarea>
+                    </div>
+                    <div >
+                    <input type="file" className="file-input file-input-bordered file-input-md w-full  " />
                   </div>
                   </div>
                   <div className="mt-4 mb-2 sm:mb-4">
-                    <button type="submit" className="btn w-full btn-success">
-                      Send You'r mail
+                    <button type="submit" className="btn w-full btn-outline btn-success ring-offset-2 ring-4">
+                      Send Your Mail
                     </button>
                   </div>
                   
-                  <p className="text-xs text-gray-600 sm:text-sm">
+                  <p className="text-xs text-green-600 sm:text-sm font-semibold ">
                     We respect your privacy. Unsubscribe at any time.
                   </p>
                 </form>

@@ -56,6 +56,7 @@ useEffect(()=>{
         updateUser,
         googleSignIn,
         emailVerify,
+        setLoading,
         user,
         loading,
     }

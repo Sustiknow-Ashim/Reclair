@@ -5,9 +5,6 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
 import login from '../../images/login/signup.jpg'
 
-
-// trying to update for git
-
 const Login = () => {
     const { register,formState: { errors }, handleSubmit } = useForm();
     const [errorLogin,setErrorLogin] = useState('')
@@ -48,6 +45,7 @@ const Login = () => {
                   name: user.displayName,
                   email : user.email,
                   image:user.photoURL
+  
                 };
                 if (user) {
                   fetch('http://localhost:5000/api/user',{

@@ -4,8 +4,11 @@ import Contact from "../Contact/Contact";
 import Home from "../Home/Home";
 import Login from "../Login/Login";
 import SignUp from "../SignUp/SignUp";
-import Project from "../Project/Project";
-import Dashboard from "../Dashboard/Dashboard";
+import ProjectDetails from "../Project/ProjectDetails";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import AdminDashboard from "../AdminDashboard/AdminDashboard";
+import AllUsers from "../AdminDashboard/AllUsers/AllUsers";
+import AddProjects from "../AdminDashboard/AddProjects/AddProjects";
 
 
 
@@ -34,12 +37,22 @@ export const router = createBrowserRouter([
             },
             {
                 path:'/project',
-                element:<Project></Project>
+                element:<ProjectDetails></ProjectDetails>
+            },
+        ]
+    },
+    {
+        path:'/dashboard',
+        element: <PrivateRoute><AdminDashboard></AdminDashboard></PrivateRoute>,
+        children:[
+            {
+                path:'/dashboard/allusers',
+                element:<AllUsers></AllUsers>
             },
             {
-                path:'/dashboard',
-                element:<Dashboard></Dashboard>
-            },
+                path:'/dashboard/addprojects',
+                element:<AddProjects></AddProjects>
+            }
         ]
     }
 ])
