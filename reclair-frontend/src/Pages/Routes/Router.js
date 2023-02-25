@@ -10,6 +10,7 @@ import AdminDashboard from "../AdminDashboard/AdminDashboard";
 import AllUsers from "../AdminDashboard/AllUsers/AllUsers";
 import AddProjects from "../AdminDashboard/AddProjects/AddProjects";
 import AdminRoute from "../AdminDashboard/AdminRoute/AdminRoute";
+import UserProfile from "../Dashboard/UserProfile/UserProfile";
 
 
 
@@ -53,7 +54,11 @@ export const router = createBrowserRouter([
             {
                 path:'/dashboard/addprojects',
                 element:<AdminRoute><AddProjects></AddProjects></AdminRoute>
-            }
+            },
+            {
+                path:'/dashboard/porfile',
+                element:<UserProfile></UserProfile>
+            },
             
         ]
     }
