@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider";
 import logo from "../../images/about/logo.png";
-
+import { BsPersonCircle } from "react-icons/bs";
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -57,7 +57,6 @@ const Navbar = () => {
             alt="Reclair Logo"
           />
         </Link>
-        {/* <a className="btn btn-ghost normal-case text-xl">Reclair</a> */}
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -73,60 +72,55 @@ const Navbar = () => {
           <li>
             <Link to="/contact">Contact Us</Link>
           </li>
-     
         </ul>
       </div>
-      
+
       <div className="navbar-end">
+        {user?.uid ? (
+          <div className="dropdown dropdown-end">
+            <label tabIndex={0} className=" cursor-pointer font-bold m-1">
+              {user?.photoURL ? (
+                <>
+                  <div className="avatar">
+                    <div className="w-12 ml-4 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                      <img src={user?.photoURL} className="w-8 " alt="Shoes" />
+                    </div>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="avatar">
+                    <div className="w-12 rounded-full ring ring-primary pt-4 pl-4 ring-offset-base-100 ring-offset-2">
+                      <BsPersonCircle />
+                    </div>
+                  </div>
+                </>
+              )}
+            </label>
 
+            <ul
+              tabIndex={0}
+              className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+              <li>
+                <Link to={"/dashboard/porfile"} className="mb-3 ">
+                  Profile
+                </Link>
 
-        {user?.uid ? 
-         <div className="dropdown dropdown-end">
-         <label tabIndex={0} className=" cursor-pointer font-bold m-1">
-           
-         {user?.photoURL ? (
-                   <>
-                     <div className="avatar">
-                       <div className="w-12 ml-4 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                         <img src={user.photoURL} className="w-8 " alt="Shoes" />
-                       </div>
-                     </div>
-                   </>
-                 ) : (
-                   <>
-                     <div className="">
-                         <h2 className="text-center text-primary"><span>{user?.displayName}</span></h2>
-                     </div>
-                   </>
-                 )}
-           
-           </label>
-         
-         
-         
-         
-         <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-           <li>
-         
-           <Link to={'/dashboard/porfile'} className="mb-3 ">Profile</Link>
-         
-                 <button onClick={handleLogOut} className="btn btn-primary text-white">
-                   Logout
-                 </button>
-         
-           </li>
-          
-         </ul>
-         </div>
-        
-        : 
-
-        <Link className="btn" to="/signup">
-  SignUp
-</Link>
-        }
+                <button
+                  onClick={handleLogOut}
+                  className="btn btn-primary text-white">
+                  Logout
+                </button>
+              </li>
+            </ul>
+          </div>
+        ) : (
+          <Link className="btn" to="/signup">
+            SignUp
+          </Link>
+        )}
       </div>
-    
+
       <label
         htmlFor="my-drawer-2"
         tabIndex={2}
