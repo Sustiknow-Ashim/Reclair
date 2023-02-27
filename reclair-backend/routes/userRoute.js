@@ -8,7 +8,7 @@ router.post('/', addUser)
 
 router.route('/').get(getUsers)
 
-router.route('/:id').get(getUserById)
+router.route('/:email').get(getUserById)
 
 
 export default router;
