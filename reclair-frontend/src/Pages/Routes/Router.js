@@ -9,6 +9,8 @@ import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import AdminDashboard from "../AdminDashboard/AdminDashboard";
 import AllUsers from "../AdminDashboard/AllUsers/AllUsers";
 import AddProjects from "../AdminDashboard/AddProjects/AddProjects";
+import AdminRoute from "../AdminDashboard/AdminRoute/AdminRoute";
+import UserProfile from "../Dashboard/UserProfile/UserProfile";
 
 
 
@@ -47,12 +49,17 @@ export const router = createBrowserRouter([
         children:[
             {
                 path:'/dashboard/allusers',
-                element:<AllUsers></AllUsers>
+                element:<AdminRoute><AllUsers></AllUsers></AdminRoute>
             },
             {
                 path:'/dashboard/addprojects',
-                element:<AddProjects></AddProjects>
-            }
+                element:<AdminRoute><AddProjects></AddProjects></AdminRoute>
+            },
+            {
+                path:'/dashboard/porfile',
+                element:<UserProfile></UserProfile>
+            },
+            
         ]
     }
 ])

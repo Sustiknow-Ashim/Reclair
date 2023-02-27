@@ -16,14 +16,23 @@ const getUsers = asyncHandler(async (req, res) => {
 // @route GET /api/user/:id
 // @access Public
 const getUserById = asyncHandler(async (req, res) => {
-    const user = await User.findById(req.params.id)
+    // const user = await User.findById(req.params.id)
+    const email = await User.findOne({email:req.params.email})
 
-    if (user) {
-        res.json(user)
+
+    if (email) {
+        res.json(email)
     } else {
         res.status(404)
-        throw new Error('user not found')
+        throw new Error('email not found')
     }
+
+    // if (user) {
+    //     res.json(user)
+    // } else {
+    //     res.status(404)
+    //     throw new Error('user not found')
+    // }
 })
 
 
