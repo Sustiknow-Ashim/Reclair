@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+
 
 const Footer = () => {
     return (
@@ -13,10 +15,10 @@ const Footer = () => {
   </div> 
   <div>
     <span className="footer-title">Company</span> 
-    <a className="link link-hover">About us</a>
-    <a className="link link-hover">Contact</a>
-    <a className="link link-hover">Jobs</a>
-    <a className="link link-hover">Press kit</a>
+    <Link to='/'  className="link link-hover">Home</Link>
+    <Link to ='/project' className="link link-hover">Project</Link>
+    <Link to ='/dashboard' className="link link-hover">Dashboard</Link>
+    <Link to ='/contact' className="link link-hover">Contact Us</Link>
   </div> 
   <div>
     <span className="footer-title">Legal</span> 

@@ -173,7 +173,7 @@ const SignUp = () => {
                       {errors.password && <p role="alert" className="text-red-600">{errors.password?.message}</p>}
                     </div>
                     <input
-                      className="btn btn-success w-full mt-6"
+                      className="btn btn-success w-80 mt-6"
                       value={`${loading ? 'loading.....' : 'signup'} `}
                       type="submit"
                     />
@@ -186,7 +186,7 @@ const SignUp = () => {
                     </Link>
                   </p>
                   <div className="divider">OR</div>
-                  <button onClick={handleGoogle} className="btn w-full btn-success">
+                  <button onClick={handleGoogle} className="btn w-80 btn-success">
                     Continue With Google
                   </button>
                 </div>
