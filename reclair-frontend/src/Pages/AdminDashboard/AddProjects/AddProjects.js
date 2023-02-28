@@ -19,14 +19,15 @@ const AddProjects = () => {
         
         
         const projects = {
-            image,
             name,
+            image,
             organization,
             seller_address,
             total_project_cost,
             percent_of_investment_done,
             ppa_rate
         }
+        
         fetch('http://localhost:5000/api/project', {
             method: 'POST',
             headers: {

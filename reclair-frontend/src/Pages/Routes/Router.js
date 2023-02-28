@@ -24,51 +24,51 @@ import UserProfile from "../Dashboard/UserProfile/UserProfile";
 
 export const router = createBrowserRouter([
     {
-        path:'/',
-        element:<Main></Main>,
-        children:[
+        path: '/',
+        element: <Main></Main>,
+        children: [
             {
-                path:'/',
-                element:<Home></Home>
+                path: '/',
+                element: <Home></Home>
             },
             {
-                path:'/signup',
-                element:<SignUp></SignUp>
+                path: '/signup',
+                element: <SignUp></SignUp>
             },
             {
-                path:'/login',
-                element:<Login></Login>
+                path: '/login',
+                element: <Login></Login>
             },
             {
-                path:'/dashboard',
-                element:<Dashboard></Dashboard>
+                path: '/dashboard',
+                element: <Dashboard></Dashboard>
             },
             {
-                path:'/contact',
-                element:<Contact></Contact>
+                path: '/contact',
+                element: <Contact></Contact>
             },
             {
-                path:'/project',
-                element:<ProjectDetails></ProjectDetails>
+                path: '/project',
+                element: <ProjectDetails></ProjectDetails>
             },
             {
-            
-                path:'/myproject',
-                element:<Myproject></Myproject>
+
+                path: '/myproject',
+                element: <Myproject></Myproject>
+            },
+            {
+                path: '/dashboard/allusers',
+                element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
+            },
+            {
+                path: '/dashboard/addprojects',
+                element: <AdminRoute><AddProjects></AddProjects></AdminRoute>
+            },
+            {
+                path: '/dashboard/porfile',
+                element: <UserProfile></UserProfile>
             },
 
-                path:'/dashboard/allusers',
-                element:<AdminRoute><AllUsers></AllUsers></AdminRoute>
-            },
-            {
-                path:'/dashboard/addprojects',
-                element:<AdminRoute><AddProjects></AddProjects></AdminRoute>
-            },
-            {
-                path:'/dashboard/porfile',
-                element:<UserProfile></UserProfile>
-            },
-            
 
         ]
     }
