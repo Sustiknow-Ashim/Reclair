@@ -52,10 +52,9 @@ const AddProjects = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
-                if (data._id) {
+                if (data) {
                     toast.success('Projects Add confirm')
-                    form.reset();
+                    form.reset()
                 }
                 else {
                     toast.error(data.message)
