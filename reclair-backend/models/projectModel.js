@@ -31,7 +31,7 @@ const projectSchema = mongoose.Schema(
             required: true,
         },
         number_of_floor: {
-            type: Number,
+            type: String,
             required: true,
         },
         seller_address: {
@@ -48,7 +48,6 @@ const projectSchema = mongoose.Schema(
         },
         percent_of_investment_done: {
             type: String,
-            required: true,
         },
         ppa_rate: {
             type: String,
