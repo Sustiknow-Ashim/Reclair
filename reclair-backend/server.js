@@ -15,10 +15,6 @@ app.get('/', async(req,res)=>{
     res.send("sustiknow server running")
 })
 
-
-
-
-
 app.use('/api/project', projectRoute);
 
 app.use('/api/user', userRoute);

@@ -1,7 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { toast } from 'react-hot-toast';
+
 const AllUsers = () => {
+
   const { data: users = [], refetch } = useQuery({
     queryKey: ["users"],
     queryFn: () =>
@@ -9,19 +11,20 @@ const AllUsers = () => {
   });
 
 
-  const makeAdmin = id =>{
-      fetch(`http://localhost:5000/api/user/${id}`,{
-        method:'PUT',
-      })
+  const makeAdmin = id => {
+    fetch(`http://localhost:5000/api/user/${id}`, {
+      method: 'PUT',
+    })
       .then(res => res.json())
-      .then(data =>{
-        if(data.modifiedCount > 0){
+      .then(data => {
+        if (data.modifiedCount > 0) {
           toast.success('Admin Created Successfully')
           refetch()
         }
         console.log(data);
       })
   }
+  
   return (
     <div className="container mx-auto">
       <h2 className="text-3xl">All Users</h2>
@@ -45,8 +48,8 @@ const AllUsers = () => {
                   <td>{user.name}</td>
                   <td>{user.email}</td>
                   <td>
-                   {user?.role !== 'Admin' && <button onClick={() => makeAdmin (user._id)} className="btn btn-xs btn-primary">Admin</button>}
-                    </td>
+                    {user?.role !== 'Admin' && <button onClick={() => makeAdmin(user._id)} className="btn btn-xs btn-primary">Admin</button>}
+                  </td>
                   <td>
                     <button className="btn btn-xs btn-primary">Delete</button>
                   </td>
