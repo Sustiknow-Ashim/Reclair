@@ -77,7 +77,7 @@ const Login = () => {
               <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
                 <div className="flex flex-col items-center justify-between xl:flex-row">
                   <div className="w-full max-w-xl mb-12 xl:mb-0 xl:pr-16 xl:w-7/12">
-                    
+                  <h1 className='text-success text-4xl mb-4'>Please Login to your account</h1>
                     <p className="max-w-xl text-white mb-4 text-base  md:text-lg">
                       Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                       accusantium doloremque laucn, totam rem aperiam, eaque ipsa
@@ -104,12 +104,12 @@ const Login = () => {
                         Login Here
                       </h3>
                       <form onSubmit={handleSubmit(handleLogin)}>
-                        <div className="form-control w-full max-w-xs">
+                        <div className="form-control w-full ">
                           <label className="label">
                             <span className="label-text">Enter Your Email</span>
                           </label>
                           <input
-                            className="input input-bordered w-full max-w-xs"
+                            className="input input-bordered w-full "
                             type="email"
                             placeholder="Email here"
                             {...register("email",{required:"Please Enter the Valid Email Address"})}
@@ -117,12 +117,12 @@ const Login = () => {
                           />
                           {errors.email && <p role="alert" className="text-red-600">{errors.email?.message}</p>}
                         </div>
-                        <div className="form-control w-full max-w-xs">
+                        <div className="form-control w-full ">
                           <label className="label">
                             <span className="label-text">Enter Your Password</span>
                           </label>
                           <input
-                            className="input input-bordered w-full max-w-xs"
+                            className="input input-bordered w-full "
                             type="password"
                             placeholder="Password here"
                             {...register("password",{required:"Your Password Wrong Please try again",minLength:{value:8, message:"Your Password Wrong Please try again" }})}
