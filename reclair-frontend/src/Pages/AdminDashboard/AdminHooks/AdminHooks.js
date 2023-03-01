@@ -1,15 +1,18 @@
 import { useEffect, useState } from "react";
 
 const useAdmin = (email) => {
-  const [isAdmin, setIsAdmin] = useState('');
+  const [isAdmin, setIsAdmin] = useState(false);
   const [isAdminLoading, setIsAdminLoading] = useState(true);
   useEffect(() => {
     if (email) {
       fetch(`http://localhost:5000/api/user/${email}`)
         .then((res) => res.json())
         .then((data) => {
-          setIsAdmin(data.role);
-          setIsAdminLoading(false)
+          if(data.role === 'Admin'){
+              setIsAdmin(true)
+              setIsAdminLoading(false)
+          }
+
         });
     }
   }, [email]);
