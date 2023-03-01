@@ -8,16 +8,19 @@ import login from '../../images/login/signup.jpg'
 const Login = () => {
     const { register,formState: { errors }, handleSubmit } = useForm();
     const [errorLogin,setErrorLogin] = useState('')
-    const {logIn,googleSignIn,loading,setLoading} = useContext(AuthContext);
+    const {logIn,googleSignIn} = useContext(AuthContext);
+    const [isLoading,setIsLoading] = useState(false)
     const location = useLocation();
     const navigate = useNavigate()
     const from = location.state?.from?.pathname || '/'
     const google = location.state?.from?.pathname || '/';
 
     const handleLogin = (data) => {
+      setIsLoading(true)
         setErrorLogin('')
         logIn(data.email,data.password)
         .then(result =>{
+          setIsLoading(false)
           const user = result.user
           if (user.emailVerified === true) {
             toast.success("Login successfully")
@@ -30,13 +33,14 @@ const Login = () => {
          
         })
         .catch(error => {
-          setLoading(false)
+          setIsLoading(false)
           console.error(error.message)
           setErrorLogin(error.message)
         })
       };
 
       const handleGoogle = () => {
+        setIsLoading(true)
         googleSignIn()
             .then(result => {
                 const user = result.user;
@@ -56,6 +60,8 @@ const Login = () => {
                   })
                   .then(res=>res.json())
                 .then(data =>{
+                  setIsLoading(false)
+
                   toast.success('Login Successfully')
                   navigate(google, { replace: true })
                 })
@@ -63,7 +69,9 @@ const Login = () => {
                 }
   
             })
-            .catch(error => console.error(error))
+            .catch(error => {
+              setIsLoading(false)
+              console.error(error)})
           }
     return (
         <div className="">
@@ -130,8 +138,11 @@ const Login = () => {
                           {errors.password && <p role="alert" className="text-red-600">{errors.password?.message}</p>}
                         </div>
                         <input
+                        disabled ={
+                          isLoading
+                        }
                           className="btn btn-success w-80 mt-6"
-                          value={`${loading ? 'Loading....' :  'Login'} `}
+                          value={`${isLoading ? 'Loading....' :  'Login'} `}
                           type="submit"
                         />
                         <div>
@@ -145,7 +156,9 @@ const Login = () => {
                         </Link>
                       </p>
                       <div className="divider">OR</div>
-                      <button onClick={handleGoogle} className="btn w-80 btn-warning">
+                      <button
+                      disabled ={isLoading}
+                      onClick={handleGoogle} className="btn w-80 btn-warning">
                         Continue With Google
                       </button>
                     </div>
