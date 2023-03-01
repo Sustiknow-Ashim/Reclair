@@ -8,10 +8,10 @@ const AdminRoute = ({children}) => {
     const [isAdmin,isAdminLoading ]= useAdmin(user.email);
 
     if(loading ||isAdminLoading ){
-        return <h2 className='text-xl-3 text-center'>Loading ......</h2> 
+        return <h2 className='text-xl-3 text-center'>Loading .</h2> 
     }
 
-    if(user && isAdmin){
+    if(user || isAdmin){
         return children
     }
     return <Navigate to="/" state={{from:location}} replace ></Navigate>
