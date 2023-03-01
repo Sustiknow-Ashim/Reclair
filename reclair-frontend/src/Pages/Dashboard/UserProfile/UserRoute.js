@@ -9,7 +9,6 @@ const UserRoute = ({children}) => {
     const{user,loading} = useContext(AuthContext)
     const location = useLocation()
     const [isUser, isUserLoading] = UserHooks(user?.email)
-    console.log(isUserLoading,loading);
 
     if(loading || isUserLoading){
         return <h2 className='text-xl-3 text-center'>
@@ -28,7 +27,7 @@ const UserRoute = ({children}) => {
         </h2> 
     }
 
-    if(user && isUser){
+    if(user || isUser){
         return children;
     }
     return <Navigate to="/" state={{from:location}} replace ></Navigate>
