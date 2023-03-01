@@ -116,7 +116,7 @@ const SignUp = () => {
           <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
             <div className="flex flex-col items-center justify-between xl:flex-row">
               <div className="w-full max-w-xl mb-12 xl:mb-0 xl:pr-16 xl:w-7/12">
-                <h1 className='text-primary text-5xl mb-4'>Client Content Here</h1>
+                <h1 className='text-primary text-5xl mb-4'><span>Welcome to</span> <strong className='text-success'>Reclair Energy</strong></h1>
                 <p className="max-w-xl text-white mb-4 text-base  md:text-lg">
                   through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" The Extremes of Good and Evil by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular
                 </p>

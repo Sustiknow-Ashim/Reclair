@@ -86,18 +86,18 @@ const AddProjects = () => {
                             <div className="flex flex-wrap -mx-3 mb-6">
                                 <div className="w-full  px-3">
                                     <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-last-name">
-                                        Project Title
+                                        Project Code
                                     </label>
-                                    <input type="text" name='name' placeholder="Title" className="input input-md input-bordered w-full" required />
+                                    <input type="text" name='name' placeholder="Project Code" className="input input-md input-bordered w-full" required />
                                 </div>
                             </div>
 
                             <div className="flex flex-wrap -mx-3">
                                 <div className="w-full  px-3">
                                     <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-last-name">
-                                        Organization
+                                        Project Capacity in kWp
                                     </label>
-                                    <input type="text" name='organization' placeholder="Organization" className="input mb-6 input-md input-bordered w-full" required />
+                                    <input type="text" name='organization' placeholder="Project Capacity in kWp" className="input mb-6 input-md input-bordered w-full" required />
                                 </div>
                             </div>
 
@@ -106,9 +106,9 @@ const AddProjects = () => {
                             <div className="flex flex-wrap -mx-3 mb-2">
                                 <div className="w-full md:w-2/4 px-3 mb-6 md:mb-0">
                                     <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-city">
-                                        Project Type
+                                        Project Status
                                     </label>
-                                    <input type="text" name='project_type' placeholder="project type" className="input mb-6 input-md input-bordered w-full" required />
+                                    <input type="text" name='project_type' placeholder="project Status" className="input mb-6 input-md input-bordered w-full" required />
                                 </div>
                                 
                                 <div className="w-full md:w-2/4 px-3 mb-6 md:mb-0">
