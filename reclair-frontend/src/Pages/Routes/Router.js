@@ -11,6 +11,7 @@ import AllUsers from "../AdminDashboard/AllUsers/AllUsers";
 import AddProjects from "../AdminDashboard/AddProjects/AddProjects";
 import AdminRoute from "../AdminDashboard/AdminRoute/AdminRoute";
 import UserProfile from "../Dashboard/UserProfile/UserProfile";
+import Dashboard from "../Dashboard/Dashboard";
 
 
 
@@ -41,6 +42,7 @@ export const router = createBrowserRouter([
                 path:'/project',
                 element:<ProjectDetails></ProjectDetails>
             },
+            
         ]
     },
     {
@@ -59,7 +61,13 @@ export const router = createBrowserRouter([
                 path:'/dashboard/porfile',
                 element:<UserProfile></UserProfile>
             },
+            {
+                path:'/dashboard/user',
+                element:<Dashboard></Dashboard>
+            },
             
         ]
-    }
+    },
+
+    
 ])

@@ -3,7 +3,7 @@ const Project = ({ project }) => {
   const {
     name,
     organization,
-    picture,
+    image,
     seller_address,
     seller_website,
     total_project_cost,
@@ -17,7 +17,7 @@ const Project = ({ project }) => {
         <div className="md:flex">
             <div className="w-full ml-5 md:w-96  ">
             <figure>
-              <img src={picture} className="w-96 rounded-2xl justify-center" alt="Shoes" />
+              <img src={image} className="w-96 rounded-2xl justify-center" alt="Shoes" />
             </figure>
           </div>
 

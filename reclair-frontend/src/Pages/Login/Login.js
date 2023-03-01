@@ -19,7 +19,6 @@ const Login = () => {
         logIn(data.email,data.password)
         .then(result =>{
           const user = result.user
-          console.log(user);
           if (user.emailVerified === true) {
             toast.success("Login successfully")
             navigate(from, { replace: true });
