@@ -6,6 +6,7 @@ const connectDB = async () => {
         const conn = await mongoose.connect("mongodb+srv://reclair:byI95MK0lRkneSLZ@reclair.ekmf628.mongodb.net/reclair?retryWrites=true&w=majority", {
             useUnifiedTopology: true,
             useNewUrlParser: true,
+            
         })
         console.log(`MongoDB Connected: ${conn.connection.host}`.underline.green)
     } catch (error) {

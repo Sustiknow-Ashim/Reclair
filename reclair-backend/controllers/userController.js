@@ -46,7 +46,6 @@ const addUser = asyncHandler(async (req, res) => {
     console.log(user)
     const result = await User.create(user)
 
-
     if (result) {
         res.status(201)
         res.send(result)
@@ -56,4 +55,39 @@ const addUser = asyncHandler(async (req, res) => {
     }
 })
 
-export {  addUser, getUserById, getUsers }
+
+
+
+
+// @desc    Delete a user
+// @route   DELETE /api/user/:id   // api/user/makeadmin/:id
+// @access  Public
+
+const deleteUser = asyncHandler(async (req, res) => {
+    const result = await User.deleteOne({_id: req.params.id})
+    if (result) {
+        res.status(200).send(result)
+    } else {
+        res.status(400)
+        throw new Error('Invalid user data')
+    }
+})
+
+
+// @desc    Make admin
+// @route   PUT api/user/makeadmin/:id
+// @access  Private
+const makeAdmin = asyncHandler(async (req, res) => {
+    const result = await User.findOneAndUpdate({_id: req.params.id}, {role: 'Admin'}, {returnNewDocument : true})
+    console.log(result)
+    if (result) {
+        res.status(200).send(result)
+    } else {
+        res.status(400)
+        throw new Error('Invalid user data')
+    }
+})
+
+
+
+export {  addUser, getUserById, getUsers, deleteUser, makeAdmin }
