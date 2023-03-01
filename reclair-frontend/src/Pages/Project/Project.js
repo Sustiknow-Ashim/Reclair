@@ -21,7 +21,7 @@ const Project = ({ project }) => {
             </figure>
           </div>
 
-          <div className="capitalize w-full md:w-96 mx-3 ">
+          <div className="capitalize w-full md:w-96 mx-3 md:my-4 sm:my-8">
             <h2 className="font-semibold ml-4">
               Name:<span className="text-lg text-primary"> {name}</span>
             </h2>
