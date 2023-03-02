@@ -13,7 +13,7 @@ const Login = () => {
     const location = useLocation();
     const navigate = useNavigate()
     const from = location.state?.from?.pathname || '/'
-    const google = location.state?.from?.pathname || '/';
+    const google = location.state?.from?.pathname || '/'
 
     const handleLogin = (data) => {
       setIsLoading(true)
@@ -43,6 +43,7 @@ const Login = () => {
         setIsLoading(true)
         googleSignIn()
             .then(result => {
+              setIsLoading(false)
                 const user = result.user;
                 const socialUser = {
                   name: user.displayName,
@@ -50,6 +51,8 @@ const Login = () => {
                   image:user.photoURL
   
                 };
+                toast.success('Login Successfully')
+                  navigate(google, { replace: true })
                 if (user) {
                   fetch('http://localhost:5000/api/user',{
                     method:'POST',
@@ -61,9 +64,6 @@ const Login = () => {
                   .then(res=>res.json())
                 .then(data =>{
                   setIsLoading(false)
-
-                  toast.success('Login Successfully')
-                  navigate(google, { replace: true })
                 })
                     
                 }

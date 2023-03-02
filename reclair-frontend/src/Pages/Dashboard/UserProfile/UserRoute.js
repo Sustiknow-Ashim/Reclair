@@ -23,13 +23,13 @@ const UserRoute = ({children}) => {
   wrapperStyle=""
   visible={true}
 />
-
-        </h2> 
+      </h2> 
     }
 
-    if(user || isUser){
+    if(user && isUser){
         return children;
     }
+
     return <Navigate to="/" state={{from:location}} replace ></Navigate>
 };
 
