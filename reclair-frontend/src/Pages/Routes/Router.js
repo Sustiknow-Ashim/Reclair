@@ -9,9 +9,9 @@ import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import AdminDashboard from "../AdminDashboard/AdminDashboard";
 import AllUsers from "../AdminDashboard/AllUsers/AllUsers";
 import AddProjects from "../AdminDashboard/AddProjects/AddProjects";
-import AdminRoute from "../AdminDashboard/AdminRoute/AdminRoute";
 import UserProfile from "../Dashboard/UserProfile/UserProfile";
 import Dashboard from "../Dashboard/Dashboard";
+import AdminRoute from "../AdminDashboard/AdminRoute/AdminRoute";
 import UserRoute from "../Dashboard/UserProfile/UserRoute";
 
 

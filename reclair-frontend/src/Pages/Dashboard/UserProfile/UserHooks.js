@@ -13,8 +13,7 @@ const UserHooks = (email) => {
                 setIsUserLoading(false)
             }
         })
-        setIsUserLoading(false)
-        ;
+        
     }
   }, [email]);
   return [isUser, isUserLoading];
