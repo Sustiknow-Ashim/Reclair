@@ -8,16 +8,19 @@ import login from '../../images/login/signup.jpg'
 const Login = () => {
     const { register,formState: { errors }, handleSubmit } = useForm();
     const [errorLogin,setErrorLogin] = useState('')
-    const {logIn,googleSignIn,loading,setLoading} = useContext(AuthContext);
+    const {logIn,googleSignIn} = useContext(AuthContext);
+    const [isLoading,setIsLoading] = useState(false)
     const location = useLocation();
     const navigate = useNavigate()
     const from = location.state?.from?.pathname || '/'
-    const google = location.state?.from?.pathname || '/';
+    const google = location.state?.from?.pathname || '/'
 
     const handleLogin = (data) => {
+      setIsLoading(true)
         setErrorLogin('')
         logIn(data.email,data.password)
         .then(result =>{
+          setIsLoading(false)
           const user = result.user
           if (user.emailVerified === true) {
             toast.success("Login successfully")
@@ -30,15 +33,17 @@ const Login = () => {
          
         })
         .catch(error => {
-          setLoading(false)
+          setIsLoading(false)
           console.error(error.message)
           setErrorLogin(error.message)
         })
       };
 
       const handleGoogle = () => {
+        setIsLoading(true)
         googleSignIn()
             .then(result => {
+              setIsLoading(false)
                 const user = result.user;
                 const socialUser = {
                   name: user.displayName,
@@ -46,6 +51,8 @@ const Login = () => {
                   image:user.photoURL
   
                 };
+                toast.success('Login Successfully')
+                  navigate(google, { replace: true })
                 if (user) {
                   fetch('http://localhost:5000/api/user',{
                     method:'POST',
@@ -56,14 +63,15 @@ const Login = () => {
                   })
                   .then(res=>res.json())
                 .then(data =>{
-                  toast.success('Login Successfully')
-                  navigate(google, { replace: true })
+                  setIsLoading(false)
                 })
                     
                 }
   
             })
-            .catch(error => console.error(error))
+            .catch(error => {
+              setIsLoading(false)
+              console.error(error)})
           }
     return (
         <div className="">
@@ -77,7 +85,7 @@ const Login = () => {
               <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
                 <div className="flex flex-col items-center justify-between xl:flex-row">
                   <div className="w-full max-w-xl mb-12 xl:mb-0 xl:pr-16 xl:w-7/12">
-                    
+                  <h1 className='text-success text-4xl mb-4'>Please Login to your account</h1>
                     <p className="max-w-xl text-white mb-4 text-base  md:text-lg">
                       Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                       accusantium doloremque laucn, totam rem aperiam, eaque ipsa
@@ -104,12 +112,12 @@ const Login = () => {
                         Login Here
                       </h3>
                       <form onSubmit={handleSubmit(handleLogin)}>
-                        <div className="form-control w-full max-w-xs">
+                        <div className="form-control w-full ">
                           <label className="label">
                             <span className="label-text">Enter Your Email</span>
                           </label>
                           <input
-                            className="input input-bordered w-full max-w-xs"
+                            className="input input-bordered w-full "
                             type="email"
                             placeholder="Email here"
                             {...register("email",{required:"Please Enter the Valid Email Address"})}
@@ -117,12 +125,12 @@ const Login = () => {
                           />
                           {errors.email && <p role="alert" className="text-red-600">{errors.email?.message}</p>}
                         </div>
-                        <div className="form-control w-full max-w-xs">
+                        <div className="form-control w-full ">
                           <label className="label">
                             <span className="label-text">Enter Your Password</span>
                           </label>
                           <input
-                            className="input input-bordered w-full max-w-xs"
+                            className="input input-bordered w-full "
                             type="password"
                             placeholder="Password here"
                             {...register("password",{required:"Your Password Wrong Please try again",minLength:{value:8, message:"Your Password Wrong Please try again" }})}
@@ -130,8 +138,11 @@ const Login = () => {
                           {errors.password && <p role="alert" className="text-red-600">{errors.password?.message}</p>}
                         </div>
                         <input
+                        disabled ={
+                          isLoading
+                        }
                           className="btn btn-success w-80 mt-6"
-                          value={`${loading ? 'Loading....' :  'Login'} `}
+                          value={`${isLoading ? 'Loading....' :  'Login'} `}
                           type="submit"
                         />
                         <div>
@@ -145,7 +156,9 @@ const Login = () => {
                         </Link>
                       </p>
                       <div className="divider">OR</div>
-                      <button onClick={handleGoogle} className="btn w-80 btn-warning">
+                      <button
+                      disabled ={isLoading}
+                      onClick={handleGoogle} className="btn w-80 btn-warning">
                         Continue With Google
                       </button>
                     </div>
