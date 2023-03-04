@@ -5,13 +5,13 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
-import login from '../../images/login/signup.jpg'
+import login from '../../images/login/signup.jpg';
 const SignUp = () => {
 
 // trying to update for git
 
   const { createUser, updateUser, emailVerify, googleSignIn, loading, setLoading } = useContext(AuthContext)
-  const { register, formState: { errors }, handleSubmit } = useForm();
+  const { register, formState: { errors }, handleSubmit,reset  } = useForm();
   const [signupError, setSignupError] = useState(' ');
   const [isLoading,setIsLoading] = useState(false)
   const location = useLocation()
@@ -20,19 +20,20 @@ const SignUp = () => {
   const google = location.state?.from?.pathname || '/';
   const handleSignUp = (data) => {
     setSignupError('')
-    createUser(data.email, data.password)
+    createUser(data.email, data.password, data.option)
       .then(result => {
         const user = result.user
         console.log(user);
         handleVerifyEmail()
         toast.success("User created successfully please verify your email")
+        reset()
         navigate(from, { replace: true })
         const userInfo = {
           displayName: data.name
         }
         updateUser(userInfo)
           .then(() => {
-            saveUser(data.name, data.email)
+            saveUser(data.name, data.email, data.option)
           })
           .catch(err => {
 
@@ -48,6 +49,32 @@ const SignUp = () => {
 
 
   }
+
+
+  const saveUser = (name, email, option ) => {
+    const user = { name, email,accountType: option }
+    fetch('http://localhost:5000/api/user', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: stringify(user)
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+
+      })
+  }
+
+  const handleVerifyEmail = () => {
+    emailVerify()
+      .then(() => { })
+      .catch((error) => {
+        signupError(error.message);
+      });
+  };
+
 
   const handleGoogle = () => {
     setIsLoading(true)
@@ -83,31 +110,7 @@ const SignUp = () => {
           setIsLoading(false)
           console.error(error)})
       }
-
-  const handleVerifyEmail = () => {
-    emailVerify()
-      .then(() => { })
-      .catch((error) => {
-        signupError(error.message);
-      });
-  };
-
-  const saveUser = (name, email) => {
-    const user = { name, email }
-    fetch('http://localhost:5000/api/user', {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json'
-      },
-      body: stringify(user)
-    })
-      .then(res => res.json())
-      .then(data => {
-        console.log(data)
-
-      })
-  }
-
+ 
   return (
 
 
@@ -166,6 +169,25 @@ const SignUp = () => {
                       />
                       {errors.email && <p role="alert" className="text-red-600">{errors.email?.message}</p>}
                     </div>
+                    <div className="col-span-6 sm:col-span-3 mt-2">
+                            <label
+                                htmlFor="FirstName"
+                                className="block text-sm font-medium "
+                            >
+                                Are you Organization or Investment ?
+                            </label>
+
+                            <select
+                                name="option"
+                                className="select select-bordered w-full max-w-xs my-2"
+                                {...register('option', { required: "Option is required" })}
+                            >
+                                <option value="Buyer" >Organization</option>
+                                <option value="Seller">Investment </option>
+                            </select>
+                            {errors.option && <span className='text-error'>{errors.option?.message}</span>}
+                        </div>
+
                     <div className="form-control w-full max-w-xs">
                       <label className="label">
                         <span className="label-text">Enter Your Password</span>
@@ -174,7 +196,7 @@ const SignUp = () => {
                         className="input input-bordered w-full max-w-xs"
                         type="password"
                         placeholder="Password here"
-                        {...register("password", { required: "password is required", minLength: { value: 8, message: "Password must be 8 charceter or longer" } })}
+                        {...register("password", { required: "password is required", minLength: { value: 6, message: 'password must be 6 characters longer' } })}
                       />
                       {errors.password && <p role="alert" className="text-red-600">{errors.password?.message}</p>}
                     </div>
@@ -183,7 +205,7 @@ const SignUp = () => {
                       isLoading
                     }
                       className="btn btn-success w-80 mt-6"
-                      value={`${loading ? 'loading.....' : 'signup'} `}
+                      value={`${loading ? 'Loading...' : 'signup'} `}
                       type="submit"
                     />
                     {signupError && <p className="text-red-600">{signupError}</p>}
@@ -196,7 +218,9 @@ const SignUp = () => {
                   </p>
                   <div className="divider">OR</div>
                   <button 
-                  
+                  disabled ={
+                    isLoading
+                  }
                   
                   onClick={handleGoogle} className="btn w-80 btn-success">
                     Continue With Google

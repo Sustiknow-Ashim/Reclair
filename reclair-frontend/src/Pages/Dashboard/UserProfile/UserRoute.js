@@ -9,7 +9,6 @@ const UserRoute = ({children}) => {
     const{user,loading} = useContext(AuthContext)
     const location = useLocation()
     const [isUser, isUserLoading] = UserHooks(user?.email)
-
     if(loading || isUserLoading){
         return <h2 className='text-xl-3 text-center'>
 
