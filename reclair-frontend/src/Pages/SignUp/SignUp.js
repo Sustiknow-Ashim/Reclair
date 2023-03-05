@@ -5,12 +5,14 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
+import useTitle from '../../Hooks/useTitle';
 import login from '../../images/login/signup.jpg';
 const SignUp = () => {
 
 // trying to update for git
+useTitle('Signup')
 
-  const { createUser, updateUser, emailVerify, googleSignIn, loading, setLoading } = useContext(AuthContext)
+  const { createUser, updateUser, emailVerify, googleSignIn, setLoading } = useContext(AuthContext)
   const { register, formState: { errors }, handleSubmit,reset  } = useForm();
   const [signupError, setSignupError] = useState(' ');
   const [isLoading,setIsLoading] = useState(false)
@@ -182,8 +184,8 @@ const SignUp = () => {
                                 className="select select-bordered w-full max-w-xs my-2"
                                 {...register('option', { required: "Option is required" })}
                             >
-                                <option value="Buyer" >Organization</option>
-                                <option value="Seller">Investment </option>
+                                <option value="Organization" >Organization</option>
+                                <option value="Investment">Investment </option>
                             </select>
                             {errors.option && <span className='text-error'>{errors.option?.message}</span>}
                         </div>
@@ -201,11 +203,12 @@ const SignUp = () => {
                       {errors.password && <p role="alert" className="text-red-600">{errors.password?.message}</p>}
                     </div>
                     <input
+                    
                     disabled ={
                       isLoading
                     }
                       className="btn btn-success w-80 mt-6"
-                      value={`${loading ? 'Loading...' : 'signup'} `}
+                      value={`${isLoading ? 'Loading...' : 'signup'} `}
                       type="submit"
                     />
                     {signupError && <p className="text-red-600">{signupError}</p>}
@@ -218,10 +221,7 @@ const SignUp = () => {
                   </p>
                   <div className="divider">OR</div>
                   <button 
-                  disabled ={
-                    isLoading
-                  }
-                  
+                   disabled ={isLoading}
                   onClick={handleGoogle} className="btn w-80 btn-success">
                     Continue With Google
                   </button>

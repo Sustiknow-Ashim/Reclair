@@ -1,5 +1,7 @@
 import React from "react";
+import useTitle from "../../Hooks/useTitle";
 const Project = ({ project }) => {
+  useTitle('Projects')
   const {
     name,
     organization,
