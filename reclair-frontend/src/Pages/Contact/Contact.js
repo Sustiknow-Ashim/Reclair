@@ -1,7 +1,9 @@
 import React from "react";
+import useTitle from "../../Hooks/useTitle";
 import solar1 from '../../images/login/solar1.jpg';
 import './Contact.css'
 const Contact = () => {
+  useTitle('Contact')
   return (
     <div className="relative">
       <img

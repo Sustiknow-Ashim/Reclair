@@ -6,13 +6,15 @@ import Login from "../Login/Login";
 import SignUp from "../SignUp/SignUp";
 import ProjectDetails from "../Project/ProjectDetails";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
-import AdminDashboard from "../AdminDashboard/AdminDashboard";
-import AllUsers from "../AdminDashboard/AllUsers/AllUsers";
-import AddProjects from "../AdminDashboard/AddProjects/AddProjects";
-import UserProfile from "../Dashboard/UserProfile/UserProfile";
-import Dashboard from "../Dashboard/Dashboard";
-import AdminRoute from "../AdminDashboard/AdminRoute/AdminRoute";
-import UserRoute from "../Dashboard/UserProfile/UserRoute";
+import InvestmentDashboard from "../Dashboard/InvestmentDashboard/InvestmentDashboard";
+import OrganizationRoute from "./OrganizationRoute";
+import InvestmentRoute from "./InvestmentRoute";
+import DashboardLayout from "../Dashboard/DashboardLayout";
+import AllUsers from "../Dashboard/AllUsers/AllUsers";
+import AdminRoute from "./AdminRoute";
+import Organization from "../Dashboard/Organization/Organization";
+import AddProjects from "../Dashboard/AddProjects/AddProjects";
+import Errors from "../Errors/Errors";
 
 
 
@@ -22,6 +24,7 @@ export const router = createBrowserRouter([
     {
         path:'/',
         element:<Main></Main>,
+        errorElement:<Errors></Errors>,
         children:[
             {
                 path:'/',
@@ -48,7 +51,7 @@ export const router = createBrowserRouter([
     },
     {
         path:'/dashboard',
-        element: <PrivateRoute><AdminDashboard></AdminDashboard></PrivateRoute>,
+        element: <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
         children:[
             {
                 path:'/dashboard/allusers',
@@ -58,13 +61,14 @@ export const router = createBrowserRouter([
                 path:'/dashboard/addprojects',
                 element:<AdminRoute><AddProjects></AddProjects></AdminRoute>
             },
+            
             {
-                path:'/dashboard/porfile',
-                element:<UserProfile></UserProfile>
+                path:'/dashboard/investment',
+                element:  <InvestmentRoute><InvestmentDashboard></InvestmentDashboard></InvestmentRoute>
             },
             {
-                path:'/dashboard/user',
-                element: <UserRoute><Dashboard></Dashboard></UserRoute>
+                path:'/dashboard/organization',
+                element: <OrganizationRoute><Organization></Organization></OrganizationRoute>
             },
             
         ]
