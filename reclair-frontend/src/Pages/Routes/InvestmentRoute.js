@@ -5,7 +5,7 @@ import { AuthContext } from '../../Context/AuthProvider';
 import useInvestment from '../../Hooks/investmentHooks';
 
 const InvestmentRoute = ({children}) => {
-    const [user,loading] = useContext(AuthContext)
+    const{ user,loading} = useContext(AuthContext)
     const [isInvestment,isInvestmentLoading] = useInvestment(user?.email)
     const location = useLocation()
 

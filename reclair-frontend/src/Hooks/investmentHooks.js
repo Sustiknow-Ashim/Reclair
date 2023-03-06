@@ -9,8 +9,11 @@ const useInvestment = (email) =>{
         fetch(`http://localhost:5000/api/user/${email}`)
         .then((res) => res.json())
         .then((data) => {
-            setIsInvestment(data.isInvestment)
-            setIsInvestmentLoading(false)
+         
+            if(data.role === 'Investment'){
+                setIsInvestment(true)
+                setIsInvestmentLoading(false)
+            }
                   
         })
     },[email])
