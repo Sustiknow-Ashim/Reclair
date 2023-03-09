@@ -7,7 +7,7 @@ import useOrganization from '../../Hooks/organizationHooks';
 
 const OrganizationRoute = ({children}) => {
 
-    const [user,loading] = useContext(AuthContext);
+    const {user,loading} = useContext(AuthContext);
     const location = useLocation();
     const [isOrganization, isOrganizationLoading] = useOrganization(user?.email)
 

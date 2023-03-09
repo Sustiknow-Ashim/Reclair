@@ -135,7 +135,7 @@ const Login = () => {
                             className="input input-bordered w-full "
                             type="password"
                             placeholder="Password here"
-                            {...register("password",{required:"Your Password Wrong Please try again",minLength:{value:8, message:"Your Password Wrong Please try again" }})}
+                            {...register("password",{required:"Your Password Wrong Please try again",minLength:{value:6, message:"Your Password Wrong Please try again" }})}
                           />
                           {errors.password && <p role="alert" className="text-red-600">{errors.password?.message}</p>}
                         </div>
