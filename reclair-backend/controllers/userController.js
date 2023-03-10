@@ -43,6 +43,7 @@ const getUserById = asyncHandler(async (req, res) => {
 
 const addUser = asyncHandler(async (req, res) => {
     const user = req.body;
+    console.log(req.body)
 
     const userExists = await User.findOne({email : user.email});
 

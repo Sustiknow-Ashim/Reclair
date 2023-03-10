@@ -54,7 +54,7 @@ useTitle('Signup')
 
 
   const saveUser = (name, email, option ) => {
-    const user = { name, email,accountType: option }
+    const user = { name, email,role: option }
     fetch('http://localhost:5000/api/user', {
       method: 'POST',
       headers: {
