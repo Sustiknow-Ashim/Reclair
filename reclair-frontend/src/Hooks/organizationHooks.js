@@ -12,8 +12,10 @@ const useOrganization =(email)=>{
         fetch(`http://localhost:5000/api/user/${email}`)
         .then((res) => res.json())
         .then((data) => {
-            setIsOrganization(data.isOrganization)
-            setIsOrganizationLoading(false)
+            if(data.role === 'Organization'){
+                setIsOrganization(true)
+                setIsOrganizationLoading(false)
+            }
                  
         })
 

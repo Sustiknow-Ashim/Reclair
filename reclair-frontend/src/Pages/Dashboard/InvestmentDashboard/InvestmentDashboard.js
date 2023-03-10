@@ -3,7 +3,7 @@ import React from 'react';
 const InvestmentDashboard = () => {
     return (
         <div>
-            <h2>InvestmentDashboard Comming soon...........</h2>
+            <h2 className='text-xl text-center my-5'> Hello Investment</h2>
         </div>
     );
 };

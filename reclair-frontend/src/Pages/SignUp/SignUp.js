@@ -1,5 +1,4 @@
 
-import { stringify } from '@firebase/util';
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
@@ -25,7 +24,6 @@ useTitle('Signup')
     createUser(data.email, data.password, data.option)
       .then(result => {
         const user = result.user
-        console.log(user);
         handleVerifyEmail()
         toast.success("User created successfully please verify your email")
         reset()
@@ -60,11 +58,10 @@ useTitle('Signup')
       headers: {
         'content-type': 'application/json'
       },
-      body: stringify(user)
+      body: JSON.stringify(user)
     })
       .then(res => res.json())
       .then(data => {
-        console.log(data)
 
       })
   }

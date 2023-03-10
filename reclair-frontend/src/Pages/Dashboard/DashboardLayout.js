@@ -38,14 +38,14 @@ const DashboardLayout = () => {
 
                {
                 isOrganization  && <>
-                  <Link to={'/dashboard/investment'}>Organization</Link>
+                  <li><Link to={'/dashboard/organization'}>Organization</Link></li> 
                 </>
                }
     
                {
                 isInvestment && 
                 <>
-                 <Link to={'/dashboard/organization'}>Dashboard</Link>
+                <li><Link to={'/dashboard/investment'}>Investment</Link></li> 
                 </>
                }
                 
