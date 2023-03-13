@@ -15,6 +15,7 @@ import AdminRoute from "./AdminRoute";
 import Organization from "../Dashboard/Organization/Organization";
 import AddProjects from "../Dashboard/AddProjects/AddProjects";
 import Errors from "../Errors/Errors";
+import ProjectRequest from "../Dashboard/ProjectRequest/ProjectRequest";
 
 
 
@@ -65,6 +66,10 @@ export const router = createBrowserRouter([
             {
                 path:'/dashboard/investment',
                 element:  <InvestmentRoute><InvestmentDashboard></InvestmentDashboard></InvestmentRoute>
+            },
+            {
+                path:'/dashboard/request',
+                element:  <InvestmentRoute><ProjectRequest></ProjectRequest></InvestmentRoute>
             },
             {
                 path:'/dashboard/organization',
