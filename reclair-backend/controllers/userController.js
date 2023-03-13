@@ -43,14 +43,16 @@ const getUserById = asyncHandler(async (req, res) => {
 
 const addUser = asyncHandler(async (req, res) => {
     const user = req.body;
-
+    console.log(user)
 
     const userExists = await User.findOne({email : user.email});
 
     if(userExists){
-        res.send('User already exists')
-    }else{
-        const result = await User.create(user)
+        res.status(400)
+        throw new Error('User already exists')
+    }
+
+    const result = await User.create(user)
 
     if (result) {
         res.status(201)
@@ -58,7 +60,6 @@ const addUser = asyncHandler(async (req, res) => {
     } else {
         res.status(400)
         throw new Error('Invalid user data')
-    }
     }
 })
 
