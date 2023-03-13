@@ -46,6 +46,7 @@ const DashboardLayout = () => {
                 isInvestment && 
                 <>
                 <li><Link to={'/dashboard/investment'}>Investment</Link></li> 
+                <li><Link to={'/dashboard/request'}>Investment Request</Link></li> 
                 </>
                }
                 
