@@ -4,7 +4,10 @@ import card1 from '../../images/about/check-mark.svg';
 import card3 from '../../images/about/envelope.svg';
 import why from '../../images/about/1.jpg';
 import Carousel from '../../Component/Carousel';
+import { useNavigate } from 'react-router';
 const About = () => {
+
+    const navigate = useNavigate();
     return (
         <div className='container lg:px-12 md:px-8 sm:px-6 mx-auto justify-center'>
             <div className='my-8'>
@@ -12,44 +15,33 @@ const About = () => {
                 <h5 className='text-center font semi-bold text-xl mb-4'>Know how we are trasforming the ecosystem for the Organization and Investors</h5>
             </div>
 
-            <div className='grid md:grid-cols-2 sm:grid-cols-1 lg:grid-cols-3 lg:gap-4 md:gap-3 sm:gap-2 my-6'>
+            <div className='grid md:grid-cols-2 sm:grid-cols-1 lg:grid-cols-2 lg:gap-4 md:gap-2 sm:gap-3 my-6'>
 
                 <div className="card card-compact w-auto bg-base-100 shadow-xl  ">
-                    <figure><img className='w-20' src={card1} /></figure>
+                    <figure><img className='w-40' src={card1} /></figure>
                     <div className="card-body">
                         <h2 className="card-title justify-center my-3">Organization</h2>
                         <p>Get 100% uninterrupted Power Supply at much less cost per month than
                             from the conventional sources with Zero Setup Cost for first 25 years. Then with Zero cost
                             and the Solar Plant is yours.</p>
                         <div className="card-actions justify-center">
-                            <button className="btn btn-primary my-3 ">Know More</button>
+                            <button className="btn btn-primary my-3 " onClick={()=>{navigate('aboutus')}}>Know More</button>
                         </div>
                     </div>
                 </div>
 
                 <div className="card card-compact w-auto bg-base-100 shadow-xl">
-                    <figure><img className='w-20' src={card2} /></figure>
+                    <figure><img className='w-40' src={card2} /></figure>
                     <div className="card-body">
                         <h2 className="card-title justify-center my-3">Investors</h2>
                         <p>Invest Directly in Solar and get monthly return. Get atleast 5 times
                             in next 25 years</p>
                         <div className="card-actions justify-center">
-                            <button className="btn btn-primary my-3">Know More</button>
+                            <button className="btn btn-primary my-3" onClick={()=>{navigate('aboutus')}}>Know More</button>
                         </div>
                     </div>
                 </div>
-                <div className="card card-compact w-auto bg-base-100 shadow-xl">
-                    <figure><img className='w-20' src={card3} /></figure>
-                    <div className="card-body">
-                        <h2 className="card-title justify-center my-3" >Nature</h2>
-                        <p>Since we deal in green energy, we help in carbon footprint reduction
-                            of the Earth by 15%, co2 emission reduction, increase cool effect and make nature better and
-                            beautiful place for all of us.</p>
-                        <div className="card-actions justify-center">
-                            <button className="btn btn-primary my-3">Know More</button>
-                        </div>
-                    </div>
-                </div>
+               
 
             </div>
 

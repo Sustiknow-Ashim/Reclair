@@ -17,6 +17,7 @@ import AddProjects from "../Dashboard/AddProjects/AddProjects";
 import Errors from "../Errors/Errors";
 import ProjectRequest from "../Dashboard/ProjectRequest/ProjectRequest";
 import SolarEnquery from "../SolarEnquery/SolarEnquery";
+import AboutUs from "../About Us/AboutUs";
 
 
 
@@ -51,6 +52,11 @@ export const router = createBrowserRouter([
             {
                 path:'/project',
                 element:<ProjectDetails></ProjectDetails>
+            },
+          
+            {
+                path:'/aboutus',
+                element:<AboutUs></AboutUs>
             },
           
             
