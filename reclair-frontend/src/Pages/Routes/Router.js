@@ -16,6 +16,7 @@ import Organization from "../Dashboard/Organization/Organization";
 import AddProjects from "../Dashboard/AddProjects/AddProjects";
 import Errors from "../Errors/Errors";
 import ProjectRequest from "../Dashboard/ProjectRequest/ProjectRequest";
+import SolarEnquery from "../SolarEnquery/SolarEnquery";
 
 
 
@@ -42,6 +43,10 @@ export const router = createBrowserRouter([
             {
                 path:'/contact',
                 element:<Contact></Contact>
+            },
+            {
+                path:'/solarEnquery',
+                element:<SolarEnquery></SolarEnquery>
             },
             {
                 path:'/project',

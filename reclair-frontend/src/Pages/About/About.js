@@ -3,6 +3,7 @@ import card2 from '../../images/about/editor.svg';
 import card1 from '../../images/about/check-mark.svg';
 import card3 from '../../images/about/envelope.svg';
 import why from '../../images/about/1.jpg';
+import Carousel from '../../Component/Carousel';
 const About = () => {
     return (
         <div className='container lg:px-12 md:px-8 sm:px-6 mx-auto justify-center'>
@@ -74,6 +75,10 @@ const About = () => {
                 </div>
 
             </div>
+            
+
+            
+            <Carousel />
             <hr className='my-6' />
             <div className=''>
                 <h4 className="text-center text-3xl font-extrabold">Let's Start a new Project together!</h4>
@@ -81,7 +86,6 @@ const About = () => {
                     <button className="btn btn-outline btn-info mx-auto" >Let's Discuss</button>
                 </div>
             </div>
-
 
         </div>
     );
