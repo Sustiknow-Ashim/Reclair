@@ -15,6 +15,7 @@ import AdminRoute from "./AdminRoute";
 import Organization from "../Dashboard/Organization/Organization";
 import AddProjects from "../Dashboard/AddProjects/AddProjects";
 import Errors from "../Errors/Errors";
+import Test from "../../Pages/TestDashboard/Test";
 
 
 
@@ -46,6 +47,11 @@ export const router = createBrowserRouter([
                 path:'/project',
                 element:<ProjectDetails></ProjectDetails>
             },
+            {
+                path:'/test',
+                element:<Test></Test>
+            },
+            
             
         ]
     },
