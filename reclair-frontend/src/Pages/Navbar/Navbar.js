@@ -58,7 +58,7 @@ const Navbar = () => {
             </li>
             {/* Install solar option/link */}
             <li>
-              <Link to="contact">Install a Solar at your place &gt;</Link>
+              <Link to="contact">Do Project With Us</Link>
             </li>
           </ul>
         </div>
@@ -84,10 +84,16 @@ const Navbar = () => {
 
           {/* Install solar option/link */}
           <li>
-            <Link to="/solarEnquery" className="text-xl  mx-4 underline underline-offset-2 p-2 rounded">Install Solar at your place &gt;</Link>
+            <Link to="/solarEnquery">Do Project With Us</Link>
           </li>
           <li>
-            <Link to="/contact">Contact Us</Link>
+            <Link to="/solarEnquery">Buy Project From Us</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact </Link>
+          </li>
+          <li>
+            <Link to="">Work with Us </Link>
           </li>
           {/* Install solar option/link */}
           {/* <li>

@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.ac180c8a.css",
+    "main.js": "/static/js/main.95ef7bd4.js",
+    "static/js/787.02529410.chunk.js": "/static/js/787.02529410.chunk.js",
+    "static/media/signup.jpg": "/static/media/signup.9cb2633685713ce3c4e9.jpg",
+    "static/media/solar1.jpg": "/static/media/solar1.024e870e18097a8e70ed.jpg",
+    "static/media/bann.jpeg": "/static/media/bann.eb15163f0fc88853953e.jpeg",
+    "static/media/1.jpg": "/static/media/1.472eb6ef2b316ce1dd22.jpg",
+    "static/media/logo.png": "/static/media/logo.ccaded11f8dce54c8978.png",
+    "static/media/editor.svg": "/static/media/editor.e67251d9be2b53d689aacc071470b795.svg",
+    "static/media/check-mark.svg": "/static/media/check-mark.b9454631deb43d79fff913cd9a211e73.svg",
+    "static/media/envelope.svg": "/static/media/envelope.815cc23ae76e8466655290db5d142503.svg",
+    "index.html": "/index.html",
+    "main.ac180c8a.css.map": "/static/css/main.ac180c8a.css.map",
+    "main.95ef7bd4.js.map": "/static/js/main.95ef7bd4.js.map",
+    "787.02529410.chunk.js.map": "/static/js/787.02529410.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ac180c8a.css",
+    "static/js/main.95ef7bd4.js"
+  ]
+}
