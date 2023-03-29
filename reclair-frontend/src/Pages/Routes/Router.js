@@ -15,7 +15,8 @@ import AdminRoute from "./AdminRoute";
 import Organization from "../Dashboard/Organization/Organization";
 import AddProjects from "../Dashboard/AddProjects/AddProjects";
 import Errors from "../Errors/Errors";
-import Test from "../../Pages/TestDashboard/Test";
+import ProjectRequest from "../Dashboard/ProjectRequest/ProjectRequest";
+import SolarEnquery from "../SolarEnquery/SolarEnquery";
 
 
 
@@ -44,13 +45,14 @@ export const router = createBrowserRouter([
                 element:<Contact></Contact>
             },
             {
+                path:'/solarEnquery',
+                element:<SolarEnquery></SolarEnquery>
+            },
+            {
                 path:'/project',
                 element:<ProjectDetails></ProjectDetails>
             },
-            {
-                path:'/test',
-                element:<Test></Test>
-            },
+          
             
             
         ]
@@ -71,6 +73,10 @@ export const router = createBrowserRouter([
             {
                 path:'/dashboard/investment',
                 element:  <InvestmentRoute><InvestmentDashboard></InvestmentDashboard></InvestmentRoute>
+            },
+            {
+                path:'/dashboard/projectrequest',
+                element:  <InvestmentRoute><ProjectRequest></ProjectRequest></InvestmentRoute>
             },
             {
                 path:'/dashboard/organization',

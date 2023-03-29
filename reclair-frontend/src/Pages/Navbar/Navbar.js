@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider";
 import logo from "../../images/about/logo.png";
@@ -9,10 +9,18 @@ const Navbar = () => {
 
   const handleLogOut = () => {
     logOut()
-      .then(() => {})
+      .then(() => { })
       .catch((err) => console.log(err));
     navigate("/login");
   };
+
+  // Implementing: show dashboard after login 29/03
+  const [isLoggedin, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const loginStatus = localStorage.getItem('isLogin') ? true : false;
+    setIsLoggedIn(loginStatus);
+  }, [handleLogOut])
 
   return (
     <div className="navbar bg-base-100 shadow-md ">
@@ -48,6 +56,10 @@ const Navbar = () => {
             <li>
               <Link to="contact">Contact Us</Link>
             </li>
+            {/* Install solar option/link */}
+            <li>
+              <Link to="contact">Do Project With Us</Link>
+            </li>
           </ul>
         </div>
         <Link to="/" className="btn btn-ghost">
@@ -63,15 +75,30 @@ const Navbar = () => {
           <li>
             <Link to="/">Home</Link>
           </li>
-          <li tabIndex={0}>
+          {!user?.displayName && <li tabIndex={0}>
             <Link to="/project">Project</Link>
-          </li>
-          <li>
+          </li>}
+          {user?.uid && <li>
             <Link to="/dashboard">Dashboard</Link>
+          </li>}
+
+          {/* Install solar option/link */}
+          <li>
+            <Link to="/solarEnquery">Do Project With Us</Link>
           </li>
           <li>
-            <Link to="/contact">Contact Us</Link>
+            <Link to="/solarEnquery">Buy Project From Us</Link>
           </li>
+          <li>
+            <Link to="/contact">Contact </Link>
+          </li>
+          <li>
+            <Link to="">Work with Us </Link>
+          </li>
+          {/* Install solar option/link */}
+          {/* <li>
+            <Link to="/solarEnquery" className="text-xl bg-gray-100 text-blue-800 ml-10 p-2 rounded">Install Solar at your place &gt;</Link>
+          </li> */}
         </ul>
       </div>
 

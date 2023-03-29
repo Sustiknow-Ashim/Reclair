@@ -1,5 +1,6 @@
 import asyncHandler from 'express-async-handler';
 import Project from '../models/projectModel.js';
+import ProjectRequested from '../models/requestedProjectModel.js';
 
 // @desc Fetch all project
 // @route GET /api/project
@@ -36,18 +37,18 @@ const addProject = asyncHandler(async (req, res) => {
 
 
     const project = await Project.create({
-        name, 
-        image, 
-        organization, 
-        project_type, 
-        ppa_details, 
-        project_approx_area, 
-        number_of_floor, 
-        seller_address, 
-        seller_website, 
-        total_project_cost, 
-        percent_of_investment_done, 
-        ppa_rate, min_investment, 
+        name,
+        image,
+        organization,
+        project_type,
+        ppa_details,
+        project_approx_area,
+        number_of_floor,
+        seller_address,
+        seller_website,
+        total_project_cost,
+        percent_of_investment_done,
+        ppa_rate, min_investment,
         ppa_duration
     })
 
@@ -55,19 +56,19 @@ const addProject = asyncHandler(async (req, res) => {
         res.status(201)
         res.json({
             _id: project._id,
-            name: project.name, 
-            image: project.image, 
-            organization: project.organization, 
-            project_type: project.project_type, 
-            ppa_details: project.ppa_details, 
-            project_approx_area: project.project_approx_area, 
-            number_of_floor: project.number_of_floor, 
-            seller_address: project.seller_address, 
-            seller_website: project.seller_website, 
-            total_project_cost: project.total_project_cost, 
-            percent_of_investment_done: project.percent_of_investment_done, 
-            ppa_rate: project.ppa_rate, 
-            min_investment: project.min_investment, 
+            name: project.name,
+            image: project.image,
+            organization: project.organization,
+            project_type: project.project_type,
+            ppa_details: project.ppa_details,
+            project_approx_area: project.project_approx_area,
+            number_of_floor: project.number_of_floor,
+            seller_address: project.seller_address,
+            seller_website: project.seller_website,
+            total_project_cost: project.total_project_cost,
+            percent_of_investment_done: project.percent_of_investment_done,
+            ppa_rate: project.ppa_rate,
+            min_investment: project.min_investment,
             ppa_duration: project.ppa_duration
         })
     } else {
@@ -76,4 +77,40 @@ const addProject = asyncHandler(async (req, res) => {
     }
 })
 
-export { getProjects, getProjectById, addProject }
+
+const addRequestProject = asyncHandler(async (req, res) => {
+    const { org_name,
+        project_capacity,
+        project_type,
+        project_approx_area,
+        number_of_floor,
+        seller_address,
+        seller_website,
+        average_consume,
+        last_electric_bill,
+        approx_project_cost } = req.body;
+
+
+    const project = await ProjectRequested.create({
+        org_name,
+        project_capacity,
+        project_type,
+        project_approx_area,
+        number_of_floor,
+        seller_address,
+        seller_website,
+        average_consume,
+        last_electric_bill,
+        approx_project_cost,
+    })
+
+    if (project) {
+        res.status(201)
+        res.send(project);
+    } else {
+        res.status(400)
+        throw new Error('Invalid project data')
+    }
+})
+
+export { getProjects, getProjectById, addProject, addRequestProject }
