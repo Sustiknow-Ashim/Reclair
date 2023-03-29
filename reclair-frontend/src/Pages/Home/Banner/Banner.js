@@ -7,7 +7,7 @@ import BannerImg from '../../../images/banner/bann.jpeg';
 const Banner = () => {
   return (
     <div>
-      <div className="hero min-h-screen bg-base-200" style={{backgroundImage: `url(${BannerImg})` }}>
+      <div className="hero min-h-screen bg-base-200 rounded-xl " style={{backgroundImage: `url(${BannerImg})` }}>
         <div className="hero-content text-center">
           <div className="max-w-lg">
             <h1 className="text-4xl py-6 font-bold text-base-100">The only Platform to Invest Directly in Solar</h1>

@@ -52,6 +52,8 @@ export const router = createBrowserRouter([
                 path:'/project',
                 element:<ProjectDetails></ProjectDetails>
             },
+          
+            
             
         ]
     },
@@ -73,7 +75,7 @@ export const router = createBrowserRouter([
                 element:  <InvestmentRoute><InvestmentDashboard></InvestmentDashboard></InvestmentRoute>
             },
             {
-                path:'/dashboard/request',
+                path:'/dashboard/projectrequest',
                 element:  <InvestmentRoute><ProjectRequest></ProjectRequest></InvestmentRoute>
             },
             {
