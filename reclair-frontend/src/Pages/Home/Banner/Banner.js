@@ -1,4 +1,5 @@
 import React from 'react';
+import PopupModel from '../../../Component/PopupModel';
 
 import BannerImg from '../../../images/banner/bann.jpeg';
 
@@ -11,7 +12,8 @@ const Banner = () => {
           <div className="max-w-lg">
             <h1 className="text-4xl py-6 font-bold text-base-100">The only Platform to Invest Directly in Solar</h1>
             {/* <p className="py-6 text-primary-content">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p> */}
-            <button className="btn btn-primary">Get Started</button>
+            {/* <button className="btn btn-primary">Get Started</button> */}
+            <PopupModel /> 
           </div>
         </div>
       </div>
