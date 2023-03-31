@@ -46,6 +46,10 @@ const projectSchema = mongoose.Schema(
             type: String,
             required: true,
         },
+        sale_status:{
+            type: String,
+            enum: ['sold', 'on sale']
+        },
         percent_of_investment_done: {
             type: String,
         },

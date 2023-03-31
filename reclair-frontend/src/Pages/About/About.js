@@ -6,16 +6,16 @@ import why from '../../images/about/1.jpg';
 import Carousel from '../../Component/Carousel';
 const About = () => {
     return (
-        <div className='container lg:px-12 md:px-8 sm:px-6 mx-auto justify-center'>
+        <div className='container lg:px-12 md:px-8 sm:px-6 mx-auto justify-center z-10'>
             <div className='my-8'>
                 <h1 className='text-center font-bold text-2xl py-3 mt-4'>Explore to the World of Aspiration</h1>
                 <h5 className='text-center font semi-bold text-xl mb-4'>Know how we are trasforming the ecosystem for the Organization and Investors</h5>
             </div>
 
-            <div className='grid md:grid-cols-2 sm:grid-cols-1 lg:grid-cols-3 lg:gap-4 md:gap-3 sm:gap-2 my-6'>
+            <div className='grid md:grid-cols-2 sm:grid-cols-1 lg:grid-cols-2 lg:gap-8 md:gap-4 sm:gap-2 my-6'>
 
                 <div className="card card-compact w-auto bg-base-100 shadow-xl  ">
-                    <figure><img className='w-20' src={card1} /></figure>
+                    <figure><img className='w-40' src={card1} /></figure>
                     <div className="card-body">
                         <h2 className="card-title justify-center my-3">Organization</h2>
                         <p>Get 100% uninterrupted Power Supply at much less cost per month than
@@ -28,7 +28,7 @@ const About = () => {
                 </div>
 
                 <div className="card card-compact w-auto bg-base-100 shadow-xl">
-                    <figure><img className='w-20' src={card2} /></figure>
+                    <figure><img className='w-40' src={card2} /></figure>
                     <div className="card-body">
                         <h2 className="card-title justify-center my-3">Investors</h2>
                         <p>Invest Directly in Solar and get monthly return. Get atleast 5 times
@@ -38,7 +38,7 @@ const About = () => {
                         </div>
                     </div>
                 </div>
-                <div className="card card-compact w-auto bg-base-100 shadow-xl">
+                {/* <div className="card card-compact w-auto bg-base-100 shadow-xl">
                     <figure><img className='w-20' src={card3} /></figure>
                     <div className="card-body">
                         <h2 className="card-title justify-center my-3" >Nature</h2>
@@ -49,7 +49,7 @@ const About = () => {
                             <button className="btn btn-primary my-3">Know More</button>
                         </div>
                     </div>
-                </div>
+                </div> */}
 
             </div>
 

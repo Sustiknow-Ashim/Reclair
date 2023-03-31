@@ -23,7 +23,7 @@ const Navbar = () => {
   }, [handleLogOut])
 
   return (
-    <div className="navbar bg-base-100 shadow-md ">
+    <div className="navbar h-20 bg-base-100 shadow-md ">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -65,7 +65,7 @@ const Navbar = () => {
         <Link to="/" className="btn btn-ghost">
           <img
             src={logo}
-            className="h-6 w-100 mr-3 sm:h-9 rounded hover:rounded-lg"
+            className="h-14 w-44 mr-3 rounded hover:rounded-lg"
             alt="Reclair Logo"
           />
         </Link>
@@ -76,7 +76,7 @@ const Navbar = () => {
             <Link to="/">Home</Link>
           </li>
           {!user?.displayName && <li tabIndex={0}>
-            <Link to="/project">Project</Link>
+            <Link to="/project">Project on sell</Link>
           </li>}
           {user?.uid && <li>
             <Link to="/dashboard">Dashboard</Link>
