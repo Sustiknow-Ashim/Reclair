@@ -1,6 +1,6 @@
 import React from "react";
 // import useTitle from "../../Hooks/useTitle";
-import solar1 from '../../images/about/84.jpg';
+import reclair from '../../images/about/reclair.jpg';
 // import './Contact.css'
 
 
@@ -19,7 +19,7 @@ const SolarEnquery = () => {
     return (
         <div className="relative">
             <img
-                src={solar1}
+                src={reclair}
                 className="absolute inset-0 object-cover w-full h-full"
                 alt=""
             />
@@ -40,7 +40,7 @@ const SolarEnquery = () => {
                                 WELCOME TO
 
                             </h2> */}
-                            <p className="text-center font-extrabold text-4xl text-amber-50 ">Submit a Solar Project Enquiry </p>
+                            <p className="text-center font-extrabold text-4xl text-amber-50  ">Submit a Solar Project Enquiry </p>
                             <p className="text-center font-bold text-2xl text-slate-100 ">We will contact you for further discussion </p>
 
                         </div>
@@ -52,13 +52,13 @@ const SolarEnquery = () => {
                                 <form onSubmit={submitHandler}>
                                     <div className="mb-1 sm:mb-2">
                                         <label
-                                            htmlFor="Name"
+                                            htmlFor=" Organization Name"
                                             className="inline-block mb-1 font-medium"
                                         >
-                                            Your Name
+                                            Organization Name
                                         </label>
                                         <input
-                                            placeholder="John"
+                                            placeholder="Enter Your Organization Name"
                                             required
                                             type="text"
                                             className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
@@ -68,7 +68,7 @@ const SolarEnquery = () => {
                                     </div>
                                     <div className="mb-1 sm:mb-2">
                                         <label className="inline-block mb-1 font-medium">
-                                            Your Number
+                                           Contact Number
                                         </label>
                                         <input
                                             name="number"
@@ -99,10 +99,10 @@ const SolarEnquery = () => {
                                             htmlFor="Name"
                                             className="inline-block mb-1 font-medium"
                                         >
-                                            Company Name
+                                            Company Location
                                         </label>
                                         <input
-                                            placeholder="Company Name"
+                                            placeholder="Company Location"
                                             required
                                             type="text"
                                             className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
@@ -133,9 +133,8 @@ const SolarEnquery = () => {
                                         </button>
                                     </div>
 
-                                    <p className="text-xs text-green-600 sm:text-sm font-semibold ">
-                                        We respect your privacy. Unsubscribe at any time.
-                                    </p>
+                                    <p className="text-xl text-green-600  font-bold ">
+Mode of the projects company will invest and sell the ppt as per company policy. </p>
                                 </form>
                             </div>
                         </div>
