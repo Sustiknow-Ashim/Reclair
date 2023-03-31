@@ -38,18 +38,6 @@ const About = () => {
                         </div>
                     </div>
                 </div>
-                {/* <div className="card card-compact w-auto bg-base-100 shadow-xl">
-                    <figure><img className='w-20' src={card3} /></figure>
-                    <div className="card-body">
-                        <h2 className="card-title justify-center my-3" >Nature</h2>
-                        <p>Since we deal in green energy, we help in carbon footprint reduction
-                            of the Earth by 15%, co2 emission reduction, increase cool effect and make nature better and
-                            beautiful place for all of us.</p>
-                        <div className="card-actions justify-center">
-                            <button className="btn btn-primary my-3">Know More</button>
-                        </div>
-                    </div>
-                </div> */}
 
             </div>
 
