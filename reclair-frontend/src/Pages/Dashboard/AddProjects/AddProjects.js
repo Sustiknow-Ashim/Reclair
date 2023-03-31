@@ -1,12 +1,13 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { toast } from 'react-hot-toast';
+
+
 const AddProjects = () => {
+    const [projectStatus, setProjectStatus] = useState('');
 
     const handleAddToProjects = (event) => {
-
         event.preventDefault();
-
         const form = event.target;
         const name = form.name.value;
         const image = form.image.value;
@@ -72,7 +73,7 @@ const AddProjects = () => {
                 <div className='flex justify-center items-center'>
                     <div className='w-100 bg-gray-800 rounded-md p-7'>
 
-                        <form onSubmit={handleAddToProjects}  className="w-full max-w-lg">
+                        <form onSubmit={handleAddToProjects} className="w-full max-w-lg">
 
                             <div className="flex flex-wrap -mx-3 mb-6">
                                 <div className="w-full  px-3 md:mb-0">
@@ -110,7 +111,7 @@ const AddProjects = () => {
                                     </label>
                                     <input type="text" name='project_type' placeholder="project Status" className="input mb-6 input-md input-bordered w-full" required />
                                 </div>
-                                
+
                                 <div className="w-full md:w-2/4 px-3 mb-6 md:mb-0">
                                     <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-zip">
                                         PPA status
@@ -132,7 +133,7 @@ const AddProjects = () => {
                             <div className="flex flex-wrap -mx-3">
                                 <div className="w-full  px-3">
                                     <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-last-name">
-                                        Nmber of floor 
+                                        Nmber of floor
                                     </label>
                                     <input type="text" name='number_of_floor' placeholder="4 floor" className="input mb-6 input-md input-bordered w-full" required />
                                 </div>
@@ -156,6 +157,14 @@ const AddProjects = () => {
                                 </div>
                             </div>
 
+                            <div className="flex flex-wrap mx-2 m-3">
+                                <select onChange={(e)=>{console.log(e.target.value)}} className="w-80  px-3 select select-bordered">
+                                    <option disabled selected>Project Selling status</option>
+                                    <option value='on sale'>On Sale</option>
+                                    <option value={'sold'}>Sold</option>
+                                </select>
+                            </div>
+
                             <div className="flex flex-wrap -mx-3">
                                 <div className="w-full  px-3">
                                     <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-last-name">
@@ -171,7 +180,7 @@ const AddProjects = () => {
                                     <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-last-name">
                                         Percent of investment done
                                     </label>
-                                    <input type="text" name='percent_of_investment_done' placeholder="investment done" className="input mb-6 input-md input-bordered w-full"  />
+                                    <input type="text" name='percent_of_investment_done' placeholder="investment done" className="input mb-6 input-md input-bordered w-full" />
                                 </div>
                             </div>
 
@@ -189,7 +198,7 @@ const AddProjects = () => {
                                     <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-last-name">
                                         Minimum Investment Possible
                                     </label>
-                                    <input type="text" name='min_investment' placeholder="Min Investment" className="input mb-6 input-md input-bordered w-full"  />
+                                    <input type="text" name='min_investment' placeholder="Min Investment" className="input mb-6 input-md input-bordered w-full" />
                                 </div>
                             </div>
 
@@ -199,7 +208,7 @@ const AddProjects = () => {
                                     <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-last-name">
                                         PPA duration
                                     </label>
-                                    <input type="text" name='ppa_duration' placeholder="PPA Duration" className="input mb-6 input-md input-bordered w-full"  />
+                                    <input type="text" name='ppa_duration' placeholder="PPA Duration" className="input mb-6 input-md input-bordered w-full" />
                                 </div>
                             </div>
 

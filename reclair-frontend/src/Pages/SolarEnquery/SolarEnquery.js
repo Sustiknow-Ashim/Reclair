@@ -1,6 +1,6 @@
 import React from "react";
 // import useTitle from "../../Hooks/useTitle";
-import solar1 from '../../images/banner/4.jpeg';
+import solar1 from '../../images/about/84.jpg';
 // import './Contact.css'
 
 
@@ -41,7 +41,7 @@ const SolarEnquery = () => {
 
                             </h2> */}
                             <p className="text-center font-extrabold text-4xl text-amber-50 ">Submit a Solar Project Enquiry </p>
-                            <p className="text-center font-bold text-2xl text-amber-300 ">We will contact you for further discussion </p>
+                            <p className="text-center font-bold text-2xl text-slate-100 ">We will contact you for further discussion </p>
 
                         </div>
                         <div className="w-full max-w-xl  xl:w-8/14 ">
