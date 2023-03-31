@@ -7,10 +7,10 @@ import solar1 from '../../images/about/84.jpg';
 const SolarEnquery = () => {
     // useTitle('Contact')
 
-    const submitHandler = (e) =>{
+    const submitHandler = (e) => {
         e.preventDefault();
-        console.log(e.target.name.value )
-        
+        console.log(e.target.name.value)
+
     }
 
 
@@ -37,9 +37,7 @@ const SolarEnquery = () => {
                     <div className="flex flex-col items-center justify-between xl:flex-row">
                         <div className="w-full max-w-xl mb-12 xl:mb-0 xl:pr-16 xl:w-7/12">
                             {/* <h2 className="max-w-lg mb-6 font-sans text-6xl font-bold tracking-tight text-amber-50 sm:text-4xl sm:leading-none text-center animate-pulse">
-                                WELCOME TO
-
-                            </h2> */}
+                                WELCOME TO</h2> */}
                             <p className="text-center font-extrabold text-4xl text-amber-50 ">Submit a Solar Project Enquiry </p>
                             <p className="text-center font-bold text-2xl text-slate-100 ">We will contact you for further discussion </p>
 
@@ -126,7 +124,7 @@ const SolarEnquery = () => {
                                             name="ElectricityBill"
                                         />
                                     </div>
-                                    
+
                                     <div className="mt-4 mb-2 sm:mb-4">
                                         <button type="submit" className="btn w-full btn-outline btn-success ring-offset-2 ring-4">
                                             Submit

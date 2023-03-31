@@ -4,7 +4,9 @@ import card1 from '../../images/about/check-mark.svg';
 import card3 from '../../images/about/envelope.svg';
 import why from '../../images/about/1.jpg';
 import Carousel from '../../Component/Carousel';
+import { useNavigate } from 'react-router-dom';
 const About = () => {
+    const navigate = useNavigate();
     return (
         <div className='container lg:px-12 md:px-8 sm:px-6 mx-auto justify-center z-10'>
             <div className='my-8'>
@@ -22,7 +24,7 @@ const About = () => {
                             from the conventional sources with Zero Setup Cost for first 25 years. Then with Zero cost
                             and the Solar Plant is yours.</p>
                         <div className="card-actions justify-center">
-                            <button className="btn btn-primary my-3 ">Know More</button>
+                            <button className="btn btn-primary my-3 " onClick={()=>{navigate('/solarEnquery')}}>Know More</button>
                         </div>
                     </div>
                 </div>
@@ -34,7 +36,7 @@ const About = () => {
                         <p>Invest Directly in Solar and get monthly return. Get atleast 5 times
                             in next 25 years</p>
                         <div className="card-actions justify-center">
-                            <button className="btn btn-primary my-3">Know More</button>
+                            <button className="btn btn-primary my-3" onClick={()=>{navigate('/solarEnquery')}}>Know More</button>
                         </div>
                     </div>
                 </div>
