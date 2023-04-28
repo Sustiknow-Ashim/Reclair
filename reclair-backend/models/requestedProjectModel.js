@@ -2,11 +2,11 @@ import mongoose from 'mongoose'
 
 const projectRequested = mongoose.Schema(
     {
-        user: {
-            type: mongoose.Schema.Types.ObjectId,
-            required: true,
-            ref: 'User',
-        },
+        // user: {
+        //     type: mongoose.Schema.Types.ObjectId,
+        //     required: true,
+        //     ref: 'User',
+        // },
         org_name: {
             type: String,
             required: true,

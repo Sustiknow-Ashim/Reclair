@@ -17,6 +17,7 @@ import AddProjects from "../Dashboard/AddProjects/AddProjects";
 import Errors from "../Errors/Errors";
 import ProjectRequest from "../Dashboard/ProjectRequest/ProjectRequest";
 import SolarEnquery from "../SolarEnquery/SolarEnquery";
+import AllProjectRequest from "../Dashboard/AllProjectRequest/AllProjectRequest";
 
 
 
@@ -68,6 +69,10 @@ export const router = createBrowserRouter([
             {
                 path:'/dashboard/addprojects',
                 element:<AdminRoute><AddProjects></AddProjects></AdminRoute>
+            },
+            {
+                path:'/dashboard/allProjectRequest',
+                element:<AdminRoute><AllProjectRequest></AllProjectRequest></AdminRoute>
             },
             
             {

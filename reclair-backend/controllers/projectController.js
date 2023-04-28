@@ -78,6 +78,10 @@ const addProject = asyncHandler(async (req, res) => {
 })
 
 
+// @desc    Adding a new RequestProject
+// @route   POST /api/project/requestProject
+// @access  Public
+
 const addRequestProject = asyncHandler(async (req, res) => {
     const { org_name,
         project_capacity,
@@ -113,4 +117,13 @@ const addRequestProject = asyncHandler(async (req, res) => {
     }
 })
 
-export { getProjects, getProjectById, addProject, addRequestProject }
+// @desc Fetch all project
+// @route GET /api/project
+// @access Public
+const getProjectRequests = asyncHandler(async (req, res) => {
+    const projects = await ProjectRequested.find({});
+
+    res.send(projects)
+})
+
+export { getProjects, getProjectById, addProject, addRequestProject, getProjectRequests }

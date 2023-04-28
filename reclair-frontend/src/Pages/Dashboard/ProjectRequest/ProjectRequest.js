@@ -31,7 +31,7 @@ const ProjectRequest = () => {
       last_electric_bill,
       approx_project_cost,
     }
-    fetch('http://localhost:5000/', {
+    fetch('http://localhost:5000/api/project/requestProject', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'

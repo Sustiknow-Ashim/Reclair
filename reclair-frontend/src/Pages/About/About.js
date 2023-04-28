@@ -85,7 +85,7 @@ const About = () => {
             <div className=''>
                 <h4 className="text-center text-3xl font-extrabold">Let's Start a new Project together!</h4>
                 <div className="card-actions justify-center my-6">
-                    <button className="btn btn-outline btn-info mx-auto" >Let's Discuss</button>
+                    <button className="btn btn-outline btn-info mx-auto"  onClick={()=>{navigate('/solarEnquery')}}>Let's Discuss</button>
                 </div>
             </div>
 
